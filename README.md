@@ -1,1 +1,1 @@
-# Custom-Project-SIC-2025
+# Capstone-Project-SIC-2025
