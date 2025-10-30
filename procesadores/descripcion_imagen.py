@@ -1,11 +1,14 @@
 import base64
 import requests
 import os
+from core.configuracion import Configuracion
 
 class AnalizadorImagen:
     def __init__(self):
-        self.groq_apikey = os.getenv('GROQ_TOKEN')
-        self.groq_url = os.getenv('GROQ_URL')
+        cfg = Configuracion()
+        self.token = cfg.token_telegram
+        self.groq_key = cfg.token_groq
+        self.groq_url = cfg.groq_url
     
     def imagen_a_base64(self, ruta_o_bytes_imagen):
         try:
@@ -19,7 +22,7 @@ class AnalizadorImagen:
             return None
         
     def describir_imagen(self, imagen_base64):
-        headers = {"Authorization": f"Bearer {self.groq_apikey}", "Content-Type": "application/json"}
+        headers = {"Authorization": f"Bearer {self.groq_key}", "Content-Type": "application/json"}
         data = {
             "model": "meta-llama/llama-4-scout-17b-16e-instruct",
             "messages": [{
