@@ -333,4 +333,12 @@ def responder(message):
 
 if __name__ == "__main__":
     print("Bot inicializado, esperando su mensaje :)...")
+    # Asegurarnos de eliminar cualquier webhook previo que pueda bloquear el polling
+    try:
+        bot.remove_webhook()
+        print("Webhook eliminado (si existía). Iniciando polling...")
+    except Exception as e:
+        print(f"Advertencia al eliminar webhook: {e}")
+
+    # Iniciar polling para recibir mensajes (usa reconexión automática internamente)
     bot.infinity_polling()
