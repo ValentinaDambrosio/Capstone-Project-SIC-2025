@@ -242,13 +242,72 @@ def borrar_ciclo(message):
         bot.reply_to(message, "⚠️ No tienes ningún registro de ciclo guardado.")
 
 
-# ---------------------- Telegram ----------------------
+# ---------------------- Telegram: Menú Principal ----------------------
+
+from telebot import types
 
 @bot.message_handler(commands=['start', 'help'])
 def bienvenida(message):
-    bot.reply_to(message, "¡Hola! Soy el bot del equipo DeepGirls. ¡A tu servicio!")
+    # Crear teclado de opciones
+    teclado = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+
+    botones = [
+        "1️⃣ Hoy quiero hablar de cómo me siento",
+        "2️⃣ Catarsis time",
+        "3️⃣ Necesito relajarme",
+        "4️⃣ Ciclo y emociones",
+        "5️⃣ Mi cuerpo y mis síntomas",
+        "6️⃣ Tips de autocuidado",
+        "7️⃣ Registrar mi día",
+        "8️⃣ Sorprendeme 💫"
+    ]
+
+    # Agregar los botones al teclado
+    for b in botones:
+        teclado.add(types.KeyboardButton(b))
+
+    # Enviar mensaje con el teclado adjunto
+    bot.send_message(
+        message.chat.id,
+        "🌸 *MENÚ PRINCIPAL*\nSeleccioná una opción:",
+        parse_mode="Markdown",
+        reply_markup=teclado
+    )
 
 
+# ---------------------- Manejo de opciones del menú ----------------------
+
+@bot.message_handler(func=lambda message: message.text in [
+    "1️⃣ Hoy quiero hablar de cómo me siento",
+    "2️⃣ Catarsis time",
+    "3️⃣ Necesito relajarme",
+    "4️⃣ Ciclo y emociones",
+    "5️⃣ Mi cuerpo y mis síntomas",
+    "6️⃣ Tips de autocuidado",
+    "7️⃣ Registrar mi día",
+    "8️⃣ Sorprendeme 💫"
+])
+def manejar_menu(message):
+    opcion = message.text
+
+    if opcion == "1️⃣ Hoy quiero hablar de cómo me siento":
+        bot.reply_to(message, "💬 Contame, ¿cómo te sentís hoy?")
+    elif opcion == "2️⃣ Catarsis time":
+        bot.reply_to(message, "😮‍💨 Este es tu espacio de catarsis. Podés desahogarte libremente.")
+    elif opcion == "3️⃣ Necesito relajarme":
+        bot.reply_to(message, "🧘 Acá van algunas ideas para relajarte: respiración, música tranquila, o escribir lo que sentís.")
+    elif opcion == "4️⃣ Ciclo y emociones":
+        bot.reply_to(message, "🌕 Tu ciclo puede influir en cómo te sentís. Probá usar /ciclo para registrarlo o ver en qué fase estás.")
+    elif opcion == "5️⃣ Mi cuerpo y mis síntomas":
+        bot.reply_to(message, "💡 Contame qué síntomas estás notando para ayudarte a entenderlos mejor.")
+    elif opcion == "6️⃣ Tips de autocuidado":
+        bot.reply_to(message, "💅 Algunos tips de autocuidado: dormí bien, comé algo rico, movete un poco y tomate tu tiempo 💕.")
+    elif opcion == "7️⃣ Registrar mi día":
+        bot.reply_to(message, "📓 Escribí cómo fue tu día para guardarlo en tu registro personal.")
+    elif opcion == "8️⃣ Sorprendeme 💫":
+        bot.reply_to(message, "✨ Te mando una frase motivadora: *'Sos más fuerte de lo que pensás.'* 🌷")
+
+# ---------------------- Manejo de mensajes e imágenes ----------------------
 @bot.message_handler(content_types=['photo'])
 def manejar_imagen(message):
     try:
@@ -260,8 +319,6 @@ def manejar_imagen(message):
         bot.reply_to(message, descripcion or "No pude describir la imagen.")
     except Exception as e:
         bot.reply_to(message, f"Ocurrió un error al procesar la imagen: {e}")
-
-
 
 @bot.message_handler(func=lambda message: True)
 def responder(message):
