@@ -1,0 +1,145 @@
+{
+  "bot_info": {
+    "name": "OvulAI",
+    "description": "Nuestra Historia\nEl acompañamiento emocional hecho tecnología\n\nOvulAI nació en 2025 como un proyecto desarrollado por un equipo de mujeres apasionadas por la salud emocional, la inteligencia artificial y el bienestar femenino. Su propósito es crear un espacio seguro, empático y accesible para hablar sobre emociones, cuerpo y autocuidado, sin juicios ni tabúes.\n\nSobre Nosotras\nUn bot para escuchar, comprender y acompañar 💜\n\nOvulAI integra inteligencia artificial y empatía humana para ofrecer apoyo personalizado a través de Telegram. Analiza emociones en texto, procesa mensajes de voz e interpreta imágenes para generar respuestas adaptadas al estado emocional de cada usuaria.\n\nMisión, Visión y Valores\n\nMisión\nPromover el bienestar emocional y corporal de las mujeres mediante herramientas de IA accesibles, seguras y humanas.\n\nVisión\nSer un referente en innovación social y emocional, integrando tecnología y empatía para el cuidado integral.\n\nValores\nEmpatía\nEscuchar sin juzgar.\nConfidencialidad\nCuidar la privacidad de cada conversación.\nInnovación\nUsar IA para el bien común.\nAutenticidad\nResponder con calidez y humanidad.\nColaboración\nConstruir junto a la comunidad."
+  },
+  "mission": "Ofrecer acompañamiento emocional y educativo a mujeres mediante inteligencia artificial empática, promoviendo el autocuidado físico y mental.",
+  "contact": {
+    "website": "https://ovulai.ai",
+    "emails": {
+      "info": {
+        "address": "info@ovulai.ai",
+        "purpose": "Consultas generales y prensa"
+      },
+      "dev": {
+        "address": "dev@ovulai.ai",
+        "purpose": "Soporte técnico y colaboración académica"
+      }
+    },
+    "telegram_channel": "https://t.me/ovulai_bot",
+    "instagram": "https://www.instagram.com/ovulai.ai/",
+    "linkedin": "https://www.linkedin.com/company/ovulai/",
+    "country": "Argentina"
+  },
+  "team": {
+      "team_members": [
+        {
+          "name": "Pilar Del Greco",
+          "roles": ["Procesamiento de lenguaje natural", "Análisis de datos emocionales"]
+        },
+        {
+          "name": "Sofía G.",
+          "roles": ["Integración de Telegram Bot", "Gestión de proyecto ágil"]
+        },
+        {
+      "name": "Luciana Cuevas Lagos",
+      "title": "Co-creadora & Coordinadora del Proyecto"
+        }  
+    ]
+    }
+    ,
+  "functionalities": {
+    "ai_modules": [
+      {
+        "name": "Análisis de Sentimiento",
+        "description": "Evalúa el tono emocional del mensaje (positivo, neutro o negativo) usando transformers e IA.",
+        "example": "Usuario: 'Me siento bajón hoy' → Bot: 'Siento que estés así 💜 ¿Querés que charlemos un poco?'"
+      },
+      {
+        "name": "Respuestas Automáticas Basadas en Dataset",
+        "description": "Genera respuestas personalizadas en base a un dataset de expresiones comunes, aplicando similitud semántica y normalización del lenguaje.",
+        "example": "Usuario: 'toy triste xq no vi a mis amigas' → Bot: 'A veces no ver a quienes queremos nos baja el ánimo 💕'"
+      },
+      {
+        "name": "Procesamiento de Audio a Texto",
+        "description": "Transcribe mensajes de voz con Groq, permitiendo conversaciones habladas.",
+        "example": "Usuario envía audio → Bot responde: 'Entendí lo que dijiste y te escucho 💫'"
+      },
+      {
+        "name": "Análisis de Imágenes",
+        "description": "Extrae información visual (como colores o contexto emocional) para generar respuestas interpretativas o reflexivas."
+      }
+    ]
+  },
+  "projects": {
+    "current": [
+      {
+        "name": "OvulAI Telegram Bot",
+        "description": "Versión funcional del asistente virtual con IA integrada para Telegram.",
+        "details": {
+          "platform": "Telegram",
+          "language": "Python",
+          "status": "en desarrollo activo"
+        }
+      }
+    ],
+    "future": [
+      {
+        "name": "OvulAI WebApp",
+        "description": "Interfaz web para extender la interacción del bot a nuevos usuarios.",
+        "planned_features": ["Registro emocional diario", "Panel de bienestar", "Estadísticas personales"]
+      }
+    ]
+  },
+  "features_menu": {
+    "options": [
+      {
+        "id": 1,
+        "label": "💭 Hoy quiero hablar de cómo me siento"
+      },
+      {
+        "id": 2,
+        "label": "🌪️ Catarsis time"
+      },
+      {
+        "id": 3,
+        "label": "🧘‍♀️ Necesito relajarme un poco"
+      },
+      {
+        "id": 4,
+        "label": "🔁 Ciclo y emociones"
+      },
+      {
+        "id": 5,
+        "label": "🌿 Tips de autocuidado"
+      },
+      {
+        "id": 6,
+        "label": "🎧 Quiero hablar y que me escuches (modo voz)"
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Qué es OvulAI?",
+      "answer": "OvulAI es un bot emocional desarrollado con inteligencia artificial para acompañar a mujeres en sus emociones, su ciclo y su bienestar diario."
+    },
+    {
+      "question": "¿Es confidencial la información que comparto?",
+      "answer": "Sí, OvulAI no guarda ni comparte conversaciones personales. Todo lo que decís se procesa solo para responderte mejor."
+    },
+    {
+      "question": "¿Puedo enviar audios o imágenes?",
+      "answer": "Sí, OvulAI puede entender mensajes de voz e interpretar imágenes simples para responder de forma empática."
+    },
+    {
+      "question": "¿Necesito instalar algo?",
+      "answer": "Solo necesitás tener Telegram y buscar @OvulAI_bot."
+    },
+    {
+      "question": "¿OvulAI puede reemplazar a un terapeuta?",
+      "answer": "No, OvulAI es un acompañante emocional, no un profesional de salud mental. Si necesitás ayuda especializada, te recomendamos consultar a un terapeuta."
+    },
+    {
+        "question": "¿Cómo puedo registrar mi ciclo?",
+        "answer": "Para registrar tu ciclo, seleccioná la opción '🔁 Ciclo y emociones' en el menú principal y seguí las indicaciones del bot."
+    }
+  ],
+  "off_topic_handling": {
+    "personal_questions": "OvulAI no responde preguntas personales fuera del contexto emocional o de autocuidado.",
+    "medical_questions": "OvulAI no brinda diagnósticos médicos. Ante cualquier duda física, se recomienda consultar a un profesional de salud.",
+    "technical_questions": "Para soporte técnico del bot, escribir a dev@ovulai.ai.",
+    "general_knowledge": "OvulAI está enfocada en acompañamiento emocional, no en responder preguntas generales o de cultura.",
+    "other_topics": "Si el tema no está relacionado con bienestar emocional, ciclo o autocuidado, OvulAI responderá con empatía y redirigirá al menú principal."
+  }
+}
