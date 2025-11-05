@@ -1,11 +1,13 @@
 from telebot import types
 from datetime import datetime
 
+
 class Router:
-    def __init__(self, bot, nlp, imagen_analyzer, cycle_tracker):
+    def __init__(self, bot, nlp, imagen_analyzer, cycle_tracker, audio_analyzer):
         self.bot = bot
         self.nlp = nlp
         self.imagen_analyzer = imagen_analyzer
+        self.audio_analyzer = audio_analyzer
         self.cycle_tracker = cycle_tracker
         self._registrar_rutas()
 
@@ -98,6 +100,15 @@ class Router:
             descripcion = self.imagen_analyzer.describir_imagen(img_b64)
             self.bot.reply_to(message, descripcion or "No pude describir la imagen.")
         
+        @self.bot.message_handler(content_types=['voice'])
+        def manejar_audio(message):
+            transcripcion = self.audio_analyzer.transcribir_voz_groq(message)
+            if transcripcion:
+                respuesta = self.audio_analyzer.obtener_respuesta_groq(transcripcion)
+                self.bot.reply_to(message, respuesta or "No pude procesar tu mensaje de voz.")
+            else:
+                self.bot.reply_to(message, "No pude transcribir tu mensaje de voz.")
+
         @self.bot.message_handler(func=lambda msg:True)
         def responder(message):
             pregunta = message.text
