@@ -1,6 +1,6 @@
 from datetime import datetime
 
-class FechaFutura(Exception):
+class ExceptionFechaFutura(Exception):
     
     def __init__(self, mensaje="La fecha no puede ser futura."):
         super().__init__(mensaje)
@@ -10,7 +10,7 @@ class FechaFutura(Exception):
         fecha_usuario = datetime.strptime(fecha, "%d/%m/%Y").date()
         fecha_actual = datetime.now().date()
         if fecha_usuario > fecha_actual:
-            raise FechaFutura("La fecha no puede ser futura.")
+            raise ExceptionFechaFutura("La fecha no puede ser futura.")
         return fecha_usuario
     
 

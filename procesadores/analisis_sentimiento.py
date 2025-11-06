@@ -2,6 +2,7 @@ from core.configuracion import Configuracion
 from transformers import pipeline
 import os
 
+
 class AnalizadorSentimiento:
 
     def __init__(self):
