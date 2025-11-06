@@ -9,7 +9,7 @@ class CycleTracker:
         self.registro = {}
         self._cargar()
     
-    def _guardar(self):
+    def _guardar_json(self):
         # Asegura que el directorio existe
         dirpath = os.path.dirname(self.archivo)
         if dirpath and not os.path.exists(dirpath):
@@ -20,7 +20,7 @@ class CycleTracker:
     
     def _cargar(self):
         if not os.path.exists(self.archivo):
-            self._guardar()
+            self._guardar_json()
         else:
             try:
                 with open(self.archivo, "r", encoding="utf-8") as f:
@@ -31,42 +31,67 @@ class CycleTracker:
                 self.registro = {}
     
     def registrar_fecha(self, chat_id, fecha):
-        self.registro[str(chat_id)] = fecha.strftime("%Y-%m-%d")
-        self._guardar()
+        self.registro[str(chat_id)] = fecha.strftime("%d-%m-%Y")
+        self._guardar_json()
     
     def calcular_estado(self, chat_id, fecha=None):
         key = str(chat_id)
         if key not in self.registro:
             return None
 
-        fecha_guardada = datetime.strptime(self.registro[key], "%Y-%m-%d")
+        fecha_guardada = datetime.strptime(self.registro[key], "%d-%m-%Y")
         hoy = datetime.now()
         dias_desde = (hoy - fecha_guardada).days
-        dia_ciclo = (dias_desde % 28) + 1
+        dia_ciclo = dias_desde + 1
 
         if 1 <= dia_ciclo <= 5:
-            fase = "Menstruación 🩸"
+            fase = "Menstruación"
         elif 6 <= dia_ciclo <= 13:
-            fase = "Fase folicular 🌱"
+            fase = "Fase folicular"
         elif 14 <= dia_ciclo <= 16:
-            fase = "Ovulación 🌸"
+            fase = "Ovulación"
         else:
-            fase = "Fase lútea 🌕"
+            fase = "Fase lútea"
         
         proximo = fecha_guardada + timedelta(days=28)
         dias_restantes = (proximo - hoy).days
+        
+        if dias_restantes < 0:
+            atrasado = True
+        else:
+            atrasado = False
 
         return {
             "ultimo": fecha_guardada.strftime('%d/%m/%Y'),
             "dia_ciclo": dia_ciclo,
             "fase": fase,
             "proximo": proximo.strftime('%d/%m/%Y'),
-            "restantes": dias_restantes
+            "restantes": dias_restantes,
+            'atrasado': atrasado
         }
+    
+    def generar_mensaje(self, chat_id):
+        estado = self.calcular_estado(chat_id)
+
+        if not estado:
+            return f"Todavía no registraste tu última fecha de ciclo 🌸\n Podés hacerlo con el botón 'Registrar mi ciclo' 📅"
+        
+        if estado["restantes"] < 0:
+            dias = f"Días atrasado: {(estado['restantes'])*-1} días."
+        else:
+            dias = f"Días restantes: {estado['restantes']} días."
+        mensaje = (
+            f"📅 Última fecha registrada: {estado['ultimo']}\n"
+            f"🔢 Día del ciclo: {estado['dia_ciclo']}\n"
+            f"🌗 Fase actual: {estado['fase']}\n"
+            f"➡️ Próximo ciclo estimado: {estado['proximo']}\n"
+            f"🕓 {dias}"
+        )
+        return mensaje
     
     def borrar(self, chat_id):
         if chat_id in self.registro:
             del self.registro[chat_id]
-            self._guardar()
+            self._guardar_json()
             return True
         return False
