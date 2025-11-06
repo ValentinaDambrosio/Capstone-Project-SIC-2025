@@ -3,6 +3,7 @@ from core.configuracion import Configuracion
 from procesadores.procesador_nlp import NLPProcessor
 from procesadores.descripcion_imagen import AnalizadorImagen
 from procesadores.procesador_audio import AnalizadorAudio
+from procesadores.analisis_sentimiento import AnalizadorSentimiento
 from ciclo.seguimiento_ciclo import CycleTracker
 from core.router import Router
 
@@ -16,8 +17,8 @@ class TelegramBotHandler:
         self.imagen_analyzer = AnalizadorImagen()
         self.seguimiento_ciclo = CycleTracker()
         self.audio_analyzer = AnalizadorAudio()
-
-        self.router = Router(self.bot, self.nlp, self.imagen_analyzer, self.seguimiento_ciclo, self.audio_analyzer)
+        self.sentiment_analyzer = AnalizadorSentimiento()
+        self.router = Router(self.bot, self.nlp, self.imagen_analyzer, self.seguimiento_ciclo, self.audio_analyzer, self.sentiment_analyzer)
 
     def iniciar(self):
         print("🤖 Bot inicializado...")

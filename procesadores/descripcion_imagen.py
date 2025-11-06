@@ -3,6 +3,7 @@ import requests
 import os
 from core.configuracion import Configuracion
 
+
 class AnalizadorImagen:
     def __init__(self):
         cfg = Configuracion()

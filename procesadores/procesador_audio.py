@@ -8,10 +8,6 @@ from dotenv import load_dotenv
 from core.configuracion import Configuracion
 
 
-
-
-
-
 class AnalizadorAudio:
     def __init__(self):
         cfg = Configuracion()
