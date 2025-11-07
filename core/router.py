@@ -3,6 +3,8 @@ from telebot import types
 from datetime import datetime
 from excepciones.excepcion_fecha_futura import ExceptionFechaFutura
 from functools import wraps
+import json
+from procesadores.procesador_nlp import NLPProcessor, MenstrualNLPProcessor
 
 
 class Router:
@@ -45,7 +47,15 @@ class Router:
         @self.bot.message_handler(commands=['start', 'help'])
         def menu(message):
             self.modos[message.chat.id] = "menu"
+            self.bot.send_message(message.chat.id, "Hola, soy OvulAI, tu bot de confianza. Estoy acá para acompañarte y escucharte 💕Contame, ¿qué necesitás hoy?")
             self._mostrar_menu(message.chat.id)
+
+        @self.bot.message_handler(func=lambda message: message.text in [
+            "volver al menú", "🔙 Volver al menú"])
+        def volver_al_menu(message):
+            chat_id = message.chat.id
+            self.modos[chat_id] = "menu"
+            self._mostrar_menu(chat_id)
 
         @self.bot.callback_query_handler(func=lambda call: call.data in["sentimientos", "sintomas", "ciclo", "sorpresa", "volver_menu"])
         def manejar_click_boton(call):
@@ -70,6 +80,8 @@ class Router:
             elif call.data == "sintomas":
                 self.modos[chat_id] = "sintomas"
                 self._mostrar_sintomas(chat_id)
+                self.bot.register_next_step_handler(call.message, self._dar_recomendaciones_fase)
+
 
             elif call.data == "sorpresa":
                 self.modos[chat_id] = "sorpresa"
@@ -108,15 +120,28 @@ class Router:
             else:
                 self._mostrar_menu(chat_id)
 
+        @self.bot.message_handler(func=lambda message: True)
+        def dar_recomendaciones_fase(self,message, chat_id):
+            estado = self.cycle_tracker.calcular_estado(str(chat_id))
+            if not estado:
+                return "No tengo datos de tu ciclo. Registrá tu última menstruación para recibir recomendaciones."
+            fase = estado['fase']
+            procesador_recomendaciones = MenstrualNLPProcessor("core/NLP/dt_recomendaciones.json", fase)
+            texto_usuario = message.text
+            respuesta = procesador_recomendaciones.buscar_en_dataset(texto_usuario, umbral=0.4)
+            if respuesta:
+                self.bot.reply_to(message, respuesta)
+            else:
+                self.bot.reply_to(message, "No tengo una respuesta para esta fase 😅")
     # ============================
     # BOTÓN VOLVER
     # ============================
     def _mostrar_boton_volver(self, chat_id, mensaje):
-        teclado = types.InlineKeyboardMarkup()
-        boton_volver = types.InlineKeyboardButton("🔙 Volver al menú", callback_data="volver_menu")
+        teclado = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+        boton_volver = types.KeyboardButton("🔙 Volver al menú")
         teclado.add(boton_volver)
         self.bot.send_message(chat_id, mensaje, reply_markup=teclado)
-    
+  
     # ============================
     # FUNCIONALIDADES
     # ============================
@@ -148,6 +173,7 @@ class Router:
     
     def _mostrar_sintomas(self, chat_id):
         estado = self.cycle_tracker.calcular_estado(str(chat_id))
+        mensaje = self.cycle_tracker.generar_mensaje(str(chat_id)) #aca
         if estado:
             intro = f"¡Te cuento cómo va tu ciclo, estás en fase {estado['fase']} 🌼!"
             if "Menstruación" in estado['fase']:
@@ -162,4 +188,4 @@ class Router:
             intro = "╭🌷━━━━━━━━━━━🌷╮"
             respuesta = "Te mando una frase motivadora: 'Sos más fuerte de lo que pensás.' 🌷"
 
-        self._mostrar_boton_volver(chat_id, f"{intro}\n\n{respuesta}")
+        self._mostrar_boton_volver(chat_id, f"{intro}\n{mensaje}\n{respuesta}")

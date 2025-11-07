@@ -81,3 +81,24 @@ class NLPProcessor:
                 if item.get("pregunta") == respuesta_texto:
                     return item.get("respuesta")
         return None
+    
+#   HERENCIA
+class MenstrualNLPProcessor(NLPProcessor):
+    def __init__(self, path_json: str, fase_actual: str):
+        super().__init__(path_json)  # llama al constructor de la clase base
+        self.fase_actual = fase_actual
+
+    def buscar_en_dataset(self, pregunta: str, umbral: float = 0.5):
+        if not self.text_processor:
+            return None
+
+        # Llamamos al comparar_texto pasando la fase
+        respuesta_texto, score = self.text_processor.comparar_texto(
+            frase=pregunta,
+            dataset=self.dataset,
+            fase=self.fase_actual
+        )
+        if score >= umbral:
+            return respuesta_texto
+        return None
+    
