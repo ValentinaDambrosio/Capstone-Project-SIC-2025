@@ -132,7 +132,14 @@ class Router:
                 self.modos[chat_id] = "sorpresa"
                 imagen = self.obtener_foto_random(chat_id)
                 if imagen:
-                    self.bot.send_photo(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
+                    if imagen.endswith((".jpg", ".jpeg", ".png")):
+                        self.bot.send_photo(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
+                    elif imagen.endswith(".gif"):
+                        self.bot.send_animation(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
+                    elif imagen.endswith((".mp4", ".webm")):
+                        self.bot.send_video(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
+                    else: 
+                        self.bot.send_photo(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
                 else:
                     self.bot.send_message(chat_id, "¡No pude conseguir una foto esta vez, pero pronto lo intentaré de nuevo! 🐶")
                 self.modos[chat_id] = "menu"
@@ -190,7 +197,7 @@ class Router:
         procesador_recomendaciones = MenstrualNLPProcessor("dt_recomendaciones.json", fase)
         texto_usuario = message.text
 
-        respuesta = procesador_recomendaciones.buscar_en_dataset(texto_usuario, umbral=0.4)
+        respuesta = procesador_recomendaciones.buscar_en_dataset(texto_usuario, umbral=0.6)
 
         if respuesta:
             self.bot.reply_to(message, respuesta)
@@ -259,9 +266,12 @@ class Router:
 
     def obtener_foto_random(self, chat_id):
         try:
-            resp = requests.get("https://random.dog/woof.json")
-            data = resp.json()
-            imagen = data.get("url")
+            while True:
+                resp = requests.get("https://random.dog/woof.json")
+                data = resp.json()
+                imagen = data.get("url")
+                if imagen.endswith((".jpg", ".jpeg", ".png", ".gif", ".mp4", ".webm")):
+                        break
             return imagen
         except Exception:
-            return None
+                return None

@@ -78,14 +78,25 @@ class CycleTracker:
         
         if estado["restantes"] < 0:
             dias = f"Días atrasado: {(estado['restantes'])*-1} días."
+            aviso = "\n\n⚠️ Parece que tu ciclo está atrasado. Si la demora persiste, considerá consultar a un profesional de salud."
         else:
+            if 5>= estado["restantes"] >= 0:
+                aviso = (
+                "\n\n🪷 ¡Atención! Tu próximo ciclo está por comenzar pronto. "
+                "¡No olvides registrarlo!"
+                )
+            else:
+                aviso = ""
             dias = f"Días restantes: {estado['restantes']} días."
+            mensaje_atraso = ""
+
         mensaje = (
             f"📅 Última fecha registrada: {estado['ultimo']}\n"
             f"🔢 Día del ciclo: {estado['dia_ciclo']}\n"
             f"🌗 Fase actual: {estado['fase']}\n"
             f"➡️ Próximo ciclo estimado: {estado['proximo']}\n"
             f"🕓 {dias}"
+            f"{aviso}"
         )
         return mensaje
     
