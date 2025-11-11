@@ -74,7 +74,7 @@ class CycleTracker:
         estado = self.calcular_estado(chat_id)
 
         if not estado:
-            return f"Todavía no registraste tu última fecha de ciclo 🌸\n Podés hacerlo con el botón 'Registrar mi ciclo' 📅"
+            return
         
         if estado["restantes"] < 0:
             dias = f"Días atrasado: {(estado['restantes'])*-1} días."

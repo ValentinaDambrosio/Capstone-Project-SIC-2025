@@ -202,7 +202,7 @@ class Router:
         if respuesta:
             self.bot.reply_to(message, respuesta)
         else:
-            self.bot.reply_to(message, "No tengo una respuesta para esta fase 😅")
+            self.bot.reply_to(message, "No tengo una respuesta para esta consulta específica. ¿Hay algo más con lo que pueda ayudarte?")
 
         self.bot.register_next_step_handler(message, self._dar_recomendaciones_fase)
 
@@ -247,9 +247,9 @@ class Router:
     
     def _mostrar_sintomas(self, chat_id):
         estado = self.cycle_tracker.calcular_estado(str(chat_id))
-        mensaje = self.cycle_tracker.generar_mensaje(str(chat_id)) #aca
         if estado:
             intro = f"¡Te cuento cómo va tu ciclo, estás en fase '{estado['fase']}' 🌼!"
+            mensaje = self.cycle_tracker.generar_mensaje(str(chat_id))
             if "Menstruación" in estado['fase']:
                 respuesta = "Tu cuerpo está en un proceso de renovación. Date permiso para descansar 🌙"
             elif "Fase folicular" in estado['fase']:
@@ -260,7 +260,10 @@ class Router:
                 respuesta = "Es tiempo de reflexión y autocuidado 🌕"
         else:
             intro = "╭🌷━━━━━━━━━━━🌷╮"
+            mensaje = "Todavía no registraste tu última fecha de ciclo 🌸\nPodés hacerlo con el botón 'Registrar mi ciclo' 📅"
             respuesta = "Te mando una frase motivadora: 'Sos más fuerte de lo que pensás.' 🌷"
+            self._mostrar_boton_volver(chat_id, f"{intro}\n\n{mensaje}\n\n{respuesta}")
+            return
 
         self._mostrar_boton_volver(chat_id, f"{intro}\n\n{mensaje}\n\n{respuesta}")
 
