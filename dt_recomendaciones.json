@@ -1,87 +1,147 @@
 [
   {
     "fase": "Menstruación",
-    "pregunta": "¿Qué tipo de ejercicio puedo hacer?",
-    "respuesta": "Optá por movimientos suaves como yoga, estiramientos o caminatas lentas. Escuchá a tu cuerpo y no te exijas demasiado 🩸."
+    "pregunta": "¿Qué ejercicios puedo hacer?",
+    "respuesta": "Movimientos suaves como yoga, estiramientos o caminatas lentas ayudan a aliviar molestias. Escuchá a tu cuerpo y no te exijas demasiado 🩸."
   },
   {
     "fase": "Menstruación",
-    "pregunta": "¿Qué alimentos me ayudan?",
-    "respuesta": "Comé comidas ricas en hierro y magnesio como espinaca, lentejas, frutos secos y chocolate negro. Ayuda a reducir cansancio y calambres 🥗."
+    "pregunta": "¿Qué alimentos son recomendables?",
+    "respuesta": "Elegí comidas ricas en hierro y magnesio: espinaca, lentejas, garbanzos, frutos secos y chocolate amargo. Ayudan a reducir cansancio y calambres 🥗."
   },
   {
     "fase": "Menstruación",
     "pregunta": "¿Cómo puedo cuidar mi bienestar emocional?",
-    "respuesta": "Tomate tiempo para vos, meditación suave, respiración profunda y escuchar música relajante pueden mejorar tu ánimo y reducir estrés 🎶."
+    "respuesta": "Meditación, respiración profunda, escribir lo que sentís o escuchar música relajante pueden ayudarte a reducir estrés y mejorar el ánimo 🎶."
   },
   {
     "fase": "Menstruación",
-    "pregunta": "¿Es bueno hacer yoga cuando estoy menstruando?",
-    "respuesta": "Sí, pero evitá posturas invertidas o muy intensas. Elegí asanas restaurativas que alivien el dolor abdominal y relajen la espalda baja 🧘‍♀️."
+    "pregunta": "¿Puedo practicar yoga o pilates?",
+    "respuesta": "Sí, pero evitá posturas invertidas o muy intensas. Elegí posiciones que alivien el abdomen y la espalda baja 🧘."
+  },
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Cómo protegerme de ETS?",
+    "respuesta": "Usá preservativos externos o internos durante las relaciones. Es el único método que previene ETS. Evitá el contacto directo con sangre o fluidos si hay heridas 🛡️."
+  },
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Qué hacer si me siento triste o irritable?",
+    "respuesta": "Permitite sentir. Escribir, respirar profundo o hablar con alguien de confianza puede ayudarte a liberar tensión y aliviar emociones 🌧️."
+  },
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Puedo tener relaciones sexuales durante la menstruación?",
+    "respuesta": "Sí, si te sentís cómoda. Es importante usar protección porque aún puede haber riesgo de embarazo y ETS. La higiene es fundamental 🩸💬."
+  },
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Qué puedo hacer para tener más energía?",
+    "respuesta": "Dormí bien, tomá suficiente agua y hacé actividades tranquilas. El cuerpo gasta más energía durante esta etapa, cuidate sin culpas 💪."
   },
   {
     "fase": "Fase folicular",
-    "pregunta": "¿Qué tipo de entrenamiento es ideal en la fase folicular?",
-    "respuesta": "Aumenta tu intensidad progresivamente. Este es un gran momento para rutinas de fuerza, cardio o clases grupales 💪."
+    "pregunta": "¿Qué ejercicios son ideales?",
+    "respuesta": "Tu energía va en aumento. Aprovechá para hacer rutinas de fuerza, cardio o probar algo nuevo como danza o natación 🔥."
   },
   {
     "fase": "Fase folicular",
-    "pregunta": "¿Qué alimentos me recomendás?",
-    "respuesta": "Consumí proteínas magras, frutas frescas, cereales integrales y semillas. Ayudan a mantener energía estable y concentración durante la fase folicular 🥑🍓."
+    "pregunta": "¿Qué alimentos me ayudan?",
+    "respuesta": "Comé proteínas magras, frutas frescas, cereales integrales y semillas. Te van a dar energía constante y claridad mental 🍓🥑."
   },
   {
     "fase": "Fase folicular",
-    "pregunta": "¿Cómo puedo mejorar mi bienestar emocional?",
-    "respuesta": "Planificar actividades que te gusten, socializar y meditar ayudan a aprovechar tu estado de ánimo positivo y tu energía alta 🌞."
+    "pregunta": "¿Cómo mejorar mi bienestar emocional?",
+    "respuesta": "Planificá proyectos, socializá, salí a caminar o meditá. Estás más receptiva y con buena autoestima, aprovechalo 🌞."
   },
   {
     "fase": "Fase folicular",
     "pregunta": "¿Puedo hacer ejercicios de alta intensidad?",
-    "respuesta": "Sí, este es el mejor momento para hacerlo. HIIT, spinning o baile son excelentes opciones porque el cuerpo se recupera más rápido 🔥."
+    "respuesta": "Sí, este es un momento óptimo. HIIT, spinning o deportes en grupo te van a hacer sentir con mucha vitalidad 💃."
   },
-    {
+  {
     "fase": "Fase folicular",
-    "pregunta": "¿Qué ejercicios debería hacer?",
-    "respuesta": "Tu energía está en aumento. HIIT, spinning o baile son excelentes opciones porque el cuerpo se recupera más rápido 🔥."
+    "pregunta": "¿Qué métodos anticonceptivos puedo usar?",
+    "respuesta": "Podés usar preservativos, píldoras, parches o dispositivos intrauterinos. Lo mejor es elegir el que se adapte a vos con ayuda médica 🛡️."
+  },
+  {
+    "fase": "Fase folicular",
+    "pregunta": "¿Cómo influye esta fase en mi deseo sexual?",
+    "respuesta": "Suele aumentar por el cambio hormonal. Es normal sentirte más activa y con energía social. Usá protección siempre 😉."
+  },
+  {
+    "fase": "Fase folicular",
+    "pregunta": "¿Es buen momento para aprender cosas nuevas?",
+    "respuesta": "Sí, tu concentración y memoria están altas. Aprovechá para estudiar o encarar proyectos nuevos 📚."
   },
   {
     "fase": "Ovulación",
-    "pregunta": "¿Qué tipo de entrenamiento me recomendás?",
-    "respuesta": "Tu energía y coordinación están al máximo 🌟. Es ideal para deportes en equipo, correr o rutinas que desafíen tu rendimiento físico."
+    "pregunta": "¿Qué entrenamiento es mejor?",
+    "respuesta": "Tu energía y coordinación están al máximo 🌟. Ideal para deportes en equipo, correr o rutinas exigentes de fuerza o resistencia."
   },
   {
     "fase": "Ovulación",
-    "pregunta": "¿Qué alimentos debería comer?",
-    "respuesta": "Incluí frutas antioxidantes, verduras de hoja verde, semillas y proteínas magras. Esto ayuda a sostener tu energía y vitalidad 💫."
+    "pregunta": "¿Qué alimentos debo comer?",
+    "respuesta": "Incluí frutas antioxidantes, verduras de hoja verde, semillas y proteínas. Te ayudan a sostener energía y mejorar la piel 💫."
   },
   {
     "fase": "Ovulación",
-    "pregunta": "¿Cómo puedo cuidar mi bienestar emocional?",
-    "respuesta": "Aprovechá tu energía para socializar, expresarte y hacer actividades creativas. El movimiento físico intenso también ayuda a liberar endorfinas 🎨🏃‍♀️."
+    "pregunta": "¿Cómo cuidar mi bienestar emocional?",
+    "respuesta": "Usá esta fase para expresarte, hacer cosas creativas o sociales. También podés canalizar tu energía con movimiento físico 🎨🏃."
   },
   {
     "fase": "Ovulación",
-    "pregunta": "¿Puedo hacer ejercicios de alta exigencia como crossfit o sprints?",
-    "respuesta": "Sí, tu cuerpo está preparado para desafíos. Recordá hidratarte bien y dormir suficiente para evitar fatiga 💧💤."
+    "pregunta": "¿Puedo hacer ejercicios exigentes como crossfit o sprints?",
+    "respuesta": "Sí, estás en tu punto de máximo rendimiento. Hidratate bien y dormí lo suficiente para mantener el equilibrio 💧💤."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Cómo cuidarme de ETS o infecciones?",
+    "respuesta": "El riesgo de ETS aumenta en esta fase por el flujo fértil. Usá preservativos y evitá el contacto con fluidos sin protección 🛡️."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Puedo quedar embarazada?",
+    "respuesta": "Sí, este es el momento más fértil del ciclo. Si no buscás embarazo, usá anticonceptivos correctamente. Si sí, es el momento ideal 🌸."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Por qué me siento más segura o atractiva?",
+    "respuesta": "Las hormonas aumentan tu energía y confianza. Aprovechá esa sensación para actividades sociales o personales ✨."
   },
   {
     "fase": "Fase lútea",
-    "pregunta": "¿Qué tipo de ejercicios son mejores en esta fase?",
-    "respuesta": "Puede que tu energía en esta fase se vea disminuida. Elegí entrenamientos moderados y de bajo impacto como pilates, caminatas o bicicleta. Tu cuerpo puede sentirse más lento y con menor resistencia 💆‍♀️."
+    "pregunta": "¿Qué ejercicios son recomendables?",
+    "respuesta": "Optá por entrenamientos moderados como pilates, caminatas o bicicleta. Si te sentís cansada, no pasa nada por descansar 💆."
   },
   {
     "fase": "Fase lútea",
-    "pregunta": "¿Qué alimentos me recomendás?",
-    "respuesta": "Consumí alimentos ricos en fibra y agua como frutas, verduras y legumbres. Evitá exceso de sal y cafeína 🌿."
+    "pregunta": "¿Qué alimentos me ayudan?",
+    "respuesta": "Comé frutas, verduras y legumbres ricas en fibra. Evitá exceso de sal y cafeína para reducir hinchazón y malestar 🌿."
   },
   {
     "fase": "Fase lútea",
-    "pregunta": "¿Cómo puedo cuidar mi bienestar emocional?",
-    "respuesta": "Actividades relajantes como yoga, meditación o escuchar música calmada ayudan a disminuir irritabilidad y ansiedad 🌙."
+    "pregunta": "¿Cómo cuidar mi bienestar emocional?",
+    "respuesta": "La irritabilidad o ansiedad pueden aparecer. Escuchar música, escribir o hacer meditación ayudan mucho 🌙."
   },
   {
     "fase": "Fase lútea",
-    "pregunta": "¿Debería evitar entrenamientos muy exigentes?",
-    "respuesta": "Sí, porque la progesterona puede aumentar la fatiga. Mantené el enfoque en moverte sin forzarte demasiado 🌕."
+    "pregunta": "¿Debo evitar entrenamientos exigentes?",
+    "respuesta": "Sí, si te sentís sin energía. Movete suave, enfocá en el bienestar y no te frustres si tu rendimiento baja 🌕."
+  },
+  {
+    "fase": "Fase lútea",
+    "pregunta": "¿Qué debo saber sobre anticonceptivos y deseo sexual?",
+    "respuesta": "El deseo puede bajar un poco por la progesterona. Usá protección siempre, incluso si el interés es menor 🛡️."
+  },
+  {
+    "fase": "Fase lútea",
+    "pregunta": "¿Cómo aliviar los síntomas premenstruales?",
+    "respuesta": "Comer sano, reducir cafeína, hacer respiración profunda y dormir bien ayudan a manejar el síndrome premenstrual 😌."
+  },
+  {
+    "fase": "Fase lútea",
+    "pregunta": "¿Por qué tengo más antojos de comida?",
+    "respuesta": "Las hormonas afectan el apetito. Elegí opciones nutritivas y no te castigues por darte un gusto 🍫."
   }
 ]

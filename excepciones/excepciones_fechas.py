@@ -15,3 +15,4 @@ class ExceptionFechas(Exception):
         elif fecha_usuario < fecha_anio_atras:
             raise ExceptionFechas("Tu último periodo debería haber sido hace menos de un año.")
         return fecha_usuario
+

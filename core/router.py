@@ -116,7 +116,7 @@ class Router:
             
             if call.data == "sentimientos":
                 self.modos[chat_id] = "sentimientos"
-                self._mostrar_boton_volver(chat_id, "¡Hablemos de cómo te sentís! Estoy para escucharte.")
+                self._mostrar_boton_volver(chat_id, "💕¡Hablemos de cómo te sentís! Estoy para escucharte.")
                 self.bot.register_next_step_handler(call.message, self._procesar_sentimiento)
 
             elif call.data == "ciclo":
@@ -133,25 +133,56 @@ class Router:
 
             elif call.data == "sorpresa":
                 self.modos[chat_id] = "sorpresa"
-                opciones = ["foto", "horoscopo"]
+                self.bot.send_message(chat_id, "¡Genial! Preparando una sorpresa especial para vos... 💫")
+                opciones = ["foto", "horoscopo", "frase"]
                 opcion = random.choice(opciones)
 
-                if opcion == "horoscopo":
-                    self.obtener_signo(call.message)
-                else:
-                    imagen = self.obtener_foto_random(chat_id)
-                    if imagen:
-                        if imagen.endswith((".jpg", ".jpeg", ".png")):
-                            self.bot.send_photo(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
-                        elif imagen.endswith(".gif"):
-                            self.bot.send_animation(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
-                        elif imagen.endswith((".mp4", ".webm")):
-                            self.bot.send_video(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
-                        else: 
-                            self.bot.send_photo(chat_id, imagen, caption="¡Aquí tienes una sorpresa para alegrar tu día! 🐶")
+                try:
+                    
+                    # Leer horócopo
+
+                    if opcion == "horoscopo":
+                        self.bot.send_message(chat_id, "Hoy toca: Tu horóscopo del día 🔮")
+                        self.obtener_signo(call.message)
+                        return
+                    
+                    # Enviar foto random de animales
+                    elif opcion == "foto":
+                        imagen = self.obtener_foto_random(chat_id)
+                        captions = [
+                            "¡Aquí tienes una sorpresa para alegrar tu día! 🐶",
+                            "¡Mirá esta belleza! Espero que te saque una sonrisa 🩷",
+                            "¡Un regalito visual para vos! Disfrutalo 🐾",
+                            "¡Espero que esta imagen te alegre el día! 🌟",
+                            "¡Una sorpresa especial solo para vos! 🐕"
+                        ]
+                        caption = random.choice(captions)
+
+                        self.bot.send_message(chat_id, "Hoy toca: Imagen random de animalitos 🐾")
+
+                        if imagen:
+                            if imagen.endswith((".jpg", ".jpeg", ".png")):
+                                self.bot.send_photo(chat_id, imagen, caption = caption)
+                            elif imagen.endswith(".gif"):
+                                self.bot.send_animation(chat_id, imagen, caption = caption)
+                            elif imagen.endswith((".mp4", ".webm")):
+                                self.bot.send_video(chat_id, imagen, caption = caption)
+                            else: 
+                                self.bot.send_photo(chat_id, imagen, caption = caption)
+                        else:
+                            self.bot.send_message(chat_id, "¡No pude conseguir una foto esta vez, pero pronto lo intentaré de nuevo! 😊")
                     else:
-                        self.bot.send_message(chat_id, "¡No pude conseguir una foto esta vez, pero pronto lo intentaré de nuevo! 🐶")
-                    self.modos[chat_id] = "menu"
+                        frase = self.obtener_frase_inspiradora()
+                        self.bot.send_message(chat_id, "Hoy toca: Frase inspiradora 🪷")
+                        self.bot.send_message(chat_id, frase, parse_mode="Markdown")
+
+                except Exception as e:
+
+                    print(f"⚠️ Error en opción sorpresa: {e}")
+                    self.bot.send_message(chat_id, "Hubo un error al procesar tu solicitud 😕. Volviendo al menú principal.")
+                
+                self.modos[chat_id] = "menu"
+                self._mostrar_menu(chat_id)
 
         @self.bot.message_handler(content_types=['photo'])
         def manejar_imagen(message):
@@ -206,7 +237,7 @@ class Router:
         procesador_recomendaciones = MenstrualNLPProcessor("dt_recomendaciones.json", fase)
         texto_usuario = message.text
 
-        respuesta = procesador_recomendaciones.buscar_en_dataset(texto_usuario, umbral=0.6)
+        respuesta = procesador_recomendaciones.buscar_en_dataset(texto_usuario, umbral=0.4)
 
         if respuesta:
             self.bot.reply_to(message, respuesta)
@@ -227,15 +258,60 @@ class Router:
     # ============================
     # FUNCIONALIDADES
     # ============================
+
+    # ============================
+    #     MODO "SENTIMIENTOS"
+    # ============================
+
     def _procesar_sentimiento(self, message):
         try:
             texto = message.text.strip()
-            respuesta = self.sentiment_analyzer.analizar_sentimiento(texto)
+
+            resultado = self.sentiment_analyzer.analizar_sentimiento(texto)
+
+            respuesta_sentimiento = resultado.get("respuesta")
+            sentimiento = resultado.get("sentimiento")
+            confianza = resultado.get("confianza")
+
+            consejos_emocionales = NLPProcessor("dt_consejos_emocionales.json")
+            consejo = consejos_emocionales.buscar_en_dataset(texto, umbral=0.6)
+
+            respuesta = f"{respuesta_sentimiento}\n\n{consejo}" if consejo else respuesta_sentimiento
+
             self.bot.reply_to(message, respuesta)
+
+            if sentimiento == "NEG" and confianza > 0.95:
+                self.mostrar_boton_psicologo(message.chat.id)
+
         except Exception as e:
             print(f"⚠️ Error al analizar sentimiento: {e}")
             self.bot.reply_to(message, "Hubo un error al analizar tu mensaje 😕. Probá de nuevo.")
             self.bot.register_next_step_handler(message, self._procesar_sentimiento)
+
+    def mostrar_boton_psicologo(self, chat_id):
+        mensaje = (
+            "Si sentís que necesitás hablar con una profesional, podés contactar con un psicólogo. 💬\n\n"
+            "📞 *Línea de Atención Psicológica:* 0800-222-3444\n\n"
+            "Recordá que buscar ayuda es un acto de valentía y autocuidado 💛"
+        )
+
+        teclado = types.InlineKeyboardMarkup()
+        boton_cercania = types.InlineKeyboardButton(
+            text="💛 Buscar Psicólogos Cerca Mío",
+            url="https://www.google.com/maps/search/psicologos+cerca+de+mi"
+        )
+        boton_online = types.InlineKeyboardButton(
+            text="🌐 Psicólogos Online",
+            url="https://www.terapiaweb.com.ar/"
+        )
+        teclado.add(boton_cercania)
+        teclado.add(boton_online)
+
+        self.bot.send_message(chat_id, mensaje, reply_markup=teclado, parse_mode="Markdown")
+
+    # ============================
+    #   MODO REGISTRAR CICLO
+    # ============================
 
     def _procesar_fecha_ciclo(self, message):
         chat_id = str(message.chat.id)
@@ -254,28 +330,60 @@ class Router:
             self.bot.reply_to(message, f"⚠️{e}")
             self.bot.register_next_step_handler(message, self._procesar_fecha_ciclo)
     
+    # ============================
+    #    MODO "SÍNTOMAS"
+    # ============================
+    
     def _mostrar_sintomas(self, chat_id):
         estado = self.cycle_tracker.calcular_estado(str(chat_id))
+        
         if estado:
             intro = f"¡Te cuento cómo va tu ciclo, estás en fase '{estado['fase']}' 🌼!"
             mensaje = self.cycle_tracker.generar_mensaje(str(chat_id))
+
+            # 💫 Recomendaciones más completas según fase
             if "Menstruación" in estado['fase']:
-                respuesta = "Tu cuerpo está en un proceso de renovación. Date permiso para descansar 🌙"
+                respuesta = (
+                    "💆‍♀️ *Tu cuerpo está en proceso de renovación.*\n"
+                    "Podés sentirte con menos energía, así que priorizá el descanso, hidratate bien y escuchá lo que tu cuerpo necesita. "
+                        "Un baño tibio o una infusión pueden ayudarte a relajarte. 🌙"
+                )
             elif "Fase folicular" in estado['fase']:
-                respuesta = "¡Es momento de nuevos comienzos! Tu energía está en aumento 🌱"
+                respuesta = (
+                        "🌱 *Tu energía está creciendo nuevamente.*\n"
+                        "Es el momento ideal para planificar, aprender algo nuevo o retomar actividades que te inspiren. "
+                        "Tu cuerpo responde muy bien al movimiento y a las ideas frescas 💡."
+                    )
             elif "Ovulación" in estado['fase']:
-                respuesta = "¡Estás en tu punto más radiante! Aprovechá esta energía creativa 🌸"
+                respuesta = (
+                        "🌸 *Estás en tu punto más radiante.*\n"
+                        "Tu vitalidad, creatividad y confianza están al máximo. Aprovechá para hacer ejercicio intenso o conectar con los demás. "
+                        "Recordá cuidarte si tenés relaciones sexuales: la protección es clave 🛡️."
+                    )
             else:
-                respuesta = "Es tiempo de reflexión y autocuidado 🌕"
+                respuesta = (
+                        "🌕 *Es momento de introspección y autocuidado.*\n"
+                        "Podés notar más sensibilidad o cambios en el ánimo. Hacete espacio para actividades suaves: leer, meditar o hacer yoga. "
+                        "Reducí el estrés y dormí bien 🫖."
+                    )
+
+            mensaje_final = f"{intro}\n\n{mensaje}\n\n{respuesta}"
         else:
             intro = "╭🌷━━━━━━━━━━━🌷╮"
             mensaje = "Todavía no registraste tu última fecha de ciclo 🌸\nPodés hacerlo con el botón 'Registrar mi ciclo' 📅"
             respuesta = "Te mando una frase motivadora: 'Sos más fuerte de lo que pensás.' 🌷"
-            self._mostrar_boton_volver(chat_id, f"{intro}\n\n{mensaje}\n\n{respuesta}")
+            self._mostrar_boton_volver(chat_id, mensaje_final)
             return
 
-        self._mostrar_boton_volver(chat_id, f"{intro}\n\n{mensaje}\n\n{respuesta}")
+        self._mostrar_boton_volver(chat_id, mensaje_final)
 
+    # ============================
+    #      MODO "SORPRESA"
+    # ============================
+
+    # ============================
+    #     IMAGENES RANDOM
+    # ============================
     def obtener_foto_random(self, chat_id):
         try:
             while True:
@@ -288,7 +396,9 @@ class Router:
         except Exception:
                 return None
 
-
+    # ============================
+    #     HORÓSCOPO DEL DÍA
+    # ============================
     def obtener_signo(self, message):
         chat_id = message.chat.id
         self.bot.send_message(
@@ -296,8 +406,6 @@ class Router:
             "✨ Por favor, ingresá tu fecha de nacimiento en formato *DD/MM* o *DD/MM/AAAA* para saber tu signo zodiacal."
         )
         self.bot.register_next_step_handler(message, self._procesar_signo_zodiacal)
-
-
 
     def _procesar_signo_zodiacal(self, message):
         chat_id = message.chat.id
@@ -375,3 +483,24 @@ class Router:
         except Exception as e:
             print(f"⚠️ Error al obtener horóscopo: {e}")
             self.bot.send_message(chat_id, "No pude obtener tu horóscopo en este momento.")
+
+        self._mostrar_menu(chat_id) 
+
+    # ============================
+    #     FRASE INSPIRADORA
+    # ============================
+
+    def obtener_frase_inspiradora(self):
+        url = "https://zenquotes.io/api/random"
+        try:
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                data = resp.json()[0]
+                frase_en = data["q"]
+                frase_es = Translator(source='en', target='es').translate(frase_en)
+                autor = data["a"]
+                return f"🪷 *Frase del día:* “{frase_es}”\n— {autor}"
+            else:
+                return "No pude conseguir una frase por ahora 😕."
+        except Exception as e:
+            return f"Error al obtener frase: {e}"

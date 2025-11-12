@@ -85,27 +85,19 @@
     "options": [
       {
         "id": 1,
-        "label": "💭 Hoy quiero hablar de cómo me siento"
+        "label": "Registrar mi ciclo 📅"
       },
       {
         "id": 2,
-        "label": "🌪️ Catarsis time"
+        "label": "Mi cuerpo y mis síntomas"
       },
       {
         "id": 3,
-        "label": "🧘‍♀️ Necesito relajarme un poco"
+        "label": "Quiero hablar de cómo me siento"
       },
       {
         "id": 4,
-        "label": "🔁 Ciclo y emociones"
-      },
-      {
-        "id": 5,
-        "label": "🌿 Tips de autocuidado"
-      },
-      {
-        "id": 6,
-        "label": "🎧 Quiero hablar y que me escuches (modo voz)"
+        "label": "Sorpréndeme 💫"
       }
     ]
   },
@@ -136,10 +128,29 @@
     }
   ],
   "off_topic_handling": {
-    "personal_questions": "OvulAI no responde preguntas personales fuera del contexto emocional o de autocuidado.",
-    "medical_questions": "OvulAI no brinda diagnósticos médicos. Ante cualquier duda física, se recomienda consultar a un profesional de salud.",
-    "technical_questions": "Para soporte técnico del bot, escribir a dev@ovulai.ai.",
-    "general_knowledge": "OvulAI está enfocada en acompañamiento emocional, no en responder preguntas generales o de cultura.",
-    "other_topics": "Si el tema no está relacionado con bienestar emocional, ciclo o autocuidado, OvulAI responderá con empatía y redirigirá al menú principal."
+    "personal_questions": "💖 OvulAI no responde preguntas personales que no estén relacionadas con tus emociones, tu bienestar o tu ciclo. Pero siempre puedo acompañarte si querés hablar de cómo te sentís.",
+    
+    "medical_questions": "⚕️ OvulAI no brinda diagnósticos médicos ni interpreta síntomas físicos. Si notás cambios importantes en tu salud, lo mejor es consultar a una profesional médica.",
+    
+    "technical_questions": "🛠️ Si tenés problemas técnicos o dudas sobre el funcionamiento del bot, podés escribir a *dev@ovulai.ai*.",
+    
+    "general_knowledge": "📘 Mi función es acompañarte emocionalmente y ayudarte a conectar con tu ciclo y tu bienestar. No tengo información sobre otros temas, pero puedo ofrecerte una frase o reflexión si querés 💫.",
+    
+    "other_topics": "🌷 Si el tema no está vinculado al bienestar, las emociones o el ciclo, puedo ofrecerte un consejo o frase para reconectar con vos misma antes de volver al menú principal.",
+    
+    "voice_messages_off_topic": "🎧 Escuché tu audio, pero no pude identificar ningún tema relacionado con tus emociones, tu ciclo o tu bienestar. Si querés, podés contarme cómo te sentís o elegir una opción del menú principal 💕.",
+    
+    "voice_messages_emotional": "🩷 Gracias por compartir cómo te sentís. Estoy acá para acompañarte, escucharte y ayudarte a entender tus emociones. ¿Querés que te deje una reflexión o frase según tu estado?",
+    
+    "voice_messages_confidential": "🔒 No guardo ni comparto audios. Todo lo que me digas se procesa solo para responderte de forma más empática y segura.",
+    
+    "inappropriate_content": "🚫 Prefiero mantener nuestras conversaciones en un espacio de cuidado y respeto. Si querés, podemos hablar de cómo te sentís o de tu bienestar 💖.",
+    
+    "relationship_questions": "💞 Puedo ayudarte a reflexionar sobre tus emociones en una relación, pero no doy consejos amorosos específicos. ¿Querés que hablemos de cómo te hace sentir?",
+    
+    "negative_emotions": "🌧️ Lamento que estés pasando por un momento difícil. Estoy acá para acompañarte y ayudarte a encontrar un poco de calma. ¿Querés que te deje una frase de contención?",
+    
+    "positive_emotions": "🌸 Me alegra mucho escuchar eso 💕. Si querés, puedo darte una frase para potenciar tu energía positiva según la fase de tu ciclo."
   }
+
 }

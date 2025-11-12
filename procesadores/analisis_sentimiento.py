@@ -30,4 +30,10 @@ class AnalizadorSentimiento:
                 respuesta_sentimiento = "Parece que no te sentís del todo bien 😕. Estoy aquí para escucharte si querés contarme más."
         else:
             respuesta_sentimiento = f"No pude determinar cómo te sentís, mi sistema arroja un nivel de confianza del {resultado['score']:.2f} Pero estoy aquí para escucharte."
-        return respuesta_sentimiento
+        
+        return {
+                    "respuesta": respuesta_sentimiento,
+                    "sentimiento": sentimiento,
+                    "confianza": confianza
+                }
+                    
