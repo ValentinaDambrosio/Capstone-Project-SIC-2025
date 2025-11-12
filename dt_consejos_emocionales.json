@@ -1,0 +1,100 @@
+[
+  {"pregunta": "Me siento triste", "respuesta": "Está bien sentir tristeza. Tomate un momento para vos y hacé algo que te reconforte."},
+
+  {"pregunta": "Estoy ansioso", "respuesta": "Respirá profundo y suavemente. Un paseo corto o escuchar música puede ayudar a calmar la ansiedad."},
+  
+  {"pregunta": "Tengo cambios de humor", "respuesta": "Los cambios de humor son normales. Observá tus emociones y respondé con amabilidad."},
+  
+  {"pregunta": "Me siento cansado", "respuesta": "Tu cuerpo y mente necesitan descanso. Tomate un momento para relajarte o recargar energías."},
+  
+  {"pregunta": "No puedo concentrarme", "respuesta": "Dividí las tareas en pasos pequeños y tomá pausas. Respirar unos minutos ayuda a reenfocarte."},
+  
+  {"pregunta": "Estoy irritado", "respuesta": "Está bien sentirse así. Hacé algo que te calme, como música, caminar o estirar."},
+  
+  {"pregunta": "Me siento solo", "respuesta": "Buscar compañía o hablar con alguien ayuda. También escribir lo que sentís puede aliviar."},
+  
+  {"pregunta": "Estoy estresado", "respuesta": "Respiración profunda, meditación o moverte un poco ayudan a reducir el estrés."},
+  
+  {"pregunta": "No sé qué siento", "respuesta": "Tomate un momento para escuchar tus emociones. Escribirlas o expresarlas ayuda a entenderlas mejor."},
+  
+  {"pregunta": "Tengo miedo", "respuesta": "Reconocer el miedo es un paso valiente. Podés hablarlo, escribirlo o compartirlo con alguien de confianza."},
+  
+  {"pregunta": "Me siento abrumado", "respuesta": "Dividí las tareas en pasos pequeños y tomá pausas. Priorizar tu bienestar es lo más importante."},
+  
+  {"pregunta": "Estoy preocupado", "respuesta": "Centrate en lo que podés controlar y dejá de lado lo que no. Respirar ayuda a calmar la mente."},
+  
+  {"pregunta": "Me siento nervioso", "respuesta": "Respiración profunda y movimiento suave ayudan a liberar tensión."},
+  
+  {"pregunta": "Tengo ganas de llorar", "respuesta": "Llorar es una forma sana de liberar emociones. Permitite sentir y expresarte."},
+  
+  {"pregunta": "Estoy aburrido", "respuesta": "Buscá algo que disfrutes: leer, dibujar, escuchar música o caminar un poco."},
+  
+  {"pregunta": "No tengo motivación", "respuesta": "Pequeños pasos ayudan. Comenzá con algo sencillo y celebrá cada avance."},
+  
+  {"pregunta": "Me siento frustrado", "respuesta": "Respiración y pausas ayudan a calmar la frustración. Reflexionar sobre la situación también sirve."},
+  
+  {"pregunta": "Estoy confundido", "respuesta": "Tomate un momento para ordenar tus ideas. Escribir lo que sentís puede ayudar."},
+  
+  {"pregunta": "Tengo ansiedad por mi ciclo", "respuesta": "Es común sentir cambios emocionales. Observá cómo te sentís y cuidate con pequeños hábitos de autocuidado."},
+  
+  {"pregunta": "Me siento inseguro", "respuesta": "Recordá tus fortalezas y hablá con vos mismo con amabilidad. Pedir apoyo es una forma de cuidarte."},
+  
+  {"pregunta": "Estoy contento", "respuesta": "¡Qué bueno que te sentís así! Disfrutá el momento y compartilo si querés."},
+  
+  {"pregunta": "Me siento orgulloso de mí", "respuesta": "Reconocer tus logros es importante. Celebrá tu esfuerzo y permitite sentir satisfacción."},
+  
+  {"pregunta": "Estoy motivado", "respuesta": "Aprovechá esa energía para avanzar en lo que querés. Cada paso cuenta."},
+  
+  {"pregunta": "Me siento feliz", "respuesta": "Disfrutá tu alegría y permitite hacer algo que te haga sentir bien."},
+  
+  {"pregunta": "Tengo esperanza", "respuesta": "Confiá en vos y en lo que viene. Mantener una actitud positiva ayuda a enfrentar desafíos."},
+  
+  {"pregunta": "Me siento agradecido", "respuesta": "Reconocer lo bueno es valioso. Aprovechá esa sensación para reforzar tu bienestar."},
+  
+  {"pregunta": "Estoy relajado", "respuesta": "Disfrutá de este momento de calma y permitite recargar energías."},
+  
+  {"pregunta": "Me siento seguro", "respuesta": "Sentirse seguro es valioso. Aprovechá esa confianza para avanzar en lo que querés."},
+  
+  {"pregunta": "Estoy emocionado", "respuesta": "Dejá que la emoción fluya y disfrutá del momento."},
+  
+  {"pregunta": "Me siento energizado", "respuesta": "Usá esa energía para hacer algo que te guste o que te acerque a tus metas."},
+  
+  {"pregunta": "Estoy relajado y tranquilo", "respuesta": "Excelente momento para cuidar de vos o disfrutar de actividades que te reconforten."},
+  
+  {"pregunta": "Me siento inspirado", "respuesta": "Aprovechá la inspiración para crear, aprender o hacer algo positivo."},
+  
+  {"pregunta": "Estoy agradecido por mi día", "respuesta": "Reconocer los momentos positivos fortalece tu bienestar emocional."},
+  
+  {"pregunta": "Me siento motivado y feliz", "respuesta": "Esa combinación es genial. Aprovechá la energía para avanzar en lo que te importa."},
+  
+  {"pregunta": "Me siento confiado", "respuesta": "Confiar en vos ayuda a tomar decisiones y enfrentar desafíos con seguridad."},
+  
+  {"pregunta": "Estoy emocionado por algo", "respuesta": "Dejá que la emoción te impulse a disfrutar o a crear algo positivo."},
+  
+  {"pregunta": "Me siento positivo", "respuesta": "Mantener una actitud positiva ayuda a enfrentar desafíos y a disfrutar más del día."},
+  
+  {"pregunta": "Estoy agradecido y feliz", "respuesta": "Disfrutá de esa combinación y permitite compartir esa alegría si querés."},
+  
+  {"pregunta": "Me siento tranquilo", "respuesta": "Disfrutá de la calma y aprovechá para cuidar de vos mismo."},
+  
+  {"pregunta": "Estoy orgulloso de mis logros", "respuesta": "Celebrar tus esfuerzos fortalece la confianza en vos y tu bienestar."},
+  
+  {"pregunta": "Me siento seguro y confiado", "respuesta": "Esa sensación es poderosa. Usala para avanzar en lo que querés."},
+  
+  {"pregunta": "Estoy alegre", "respuesta": "Disfrutá la alegría y compartila si te hace bien."},
+  
+  {"pregunta": "Me siento satisfecho con mi día", "respuesta": "Reconocer lo positivo te ayuda a mantener bienestar y motivación."},
+  
+  {"pregunta": "Estoy optimista", "respuesta": "Mantener esperanza y actitud positiva te ayuda a enfrentar desafíos con claridad."},
+  
+  {"pregunta": "Me siento bien conmigo", "respuesta": "Reconocer tu valor fortalece tu autoestima y bienestar."},
+  
+  {"pregunta": "Estoy tranquilo y feliz", "respuesta": "Disfrutá ese equilibrio y aprovecha el momento para hacer algo que te guste."},
+  
+  {"pregunta": "Me siento inspirado y motivado", "respuesta": "Aprovechá esa energía para crear, aprender o avanzar en tus objetivos."},
+  
+  {"pregunta": "Estoy agradecido y en paz", "respuesta": "Reconocer lo positivo y sentir paz fortalece tu bienestar emocional."}
+
+]
+
+

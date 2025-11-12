@@ -26,17 +26,34 @@ class AnalizadorImagen:
         headers = {"Authorization": f"Bearer {self.groq_key}", "Content-Type": "application/json"}
         data = {
             "model": "meta-llama/llama-4-scout-17b-16e-instruct",
-            "messages": [{
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": (
-                        "Por favor describe esta imagen en español."
-                        "Incluye colores, objetos y relación con el ciclo menstrual si aplica."
-                    )},
-                    {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{imagen_base64}"}}
-                ]
-            }]
-        }
+            "messages": [
+                    {
+                    "role": "system",
+                    "content": (
+                        "Eres un asistente de acompañamiento emocional enfocado en la salud y el ciclo menstrual. "
+                        "Proporciona apoyo, información sobre autocuidado y prevención de ETS o embarazo si aplica, "
+                        "de manera clara y empática."
+                    )
+                    },
+                    {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": (
+                            
+                            "Cuando describas una imagen, haz lo siguiente:"
+                            "1. Todas las descripciones que hagas deben estar claras y en español"
+                            "2. Relaciona la imagen con el bienestar, autocuidado o estados de ánimo."
+                            "3. Si es apropiado, incluye información educativa sobre prevención de ETS, embarazo o salud sexual de manera clara y responsable."
+                            "4. Siempre comunica con empatía y respeto, evitando alarmar al usuario."
+                            "5. Si la imagen no tiene relación con el bienestar o la salud menstrual, indícalo amablemente."
+                            "6. Si das consejos sobre salud, recuerda que no eres un profesional médico y sugiere consultar a un especialista si es necesario."
+                            "7. No hagas preguntas como ¿Quieres que te cuente más?; solo proporciona una descripción y consejos si aplica."
+
+                        )},
+                        {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{imagen_base64}"}}
+                                ]
+                            }]
+                    }
         try:
             resp = requests.post(self.groq_url, headers=headers, json=data, timeout=40)
             if resp.status_code == 200:
