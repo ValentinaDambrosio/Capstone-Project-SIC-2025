@@ -8,20 +8,22 @@ from functools import wraps
 import json
 import requests
 from procesadores.procesador_nlp import NLPProcessor, MenstrualNLPProcessor
+from core.google_calendario import GoogleCalendarClient
 from deep_translator import GoogleTranslator as Translator
 
 class Router:
-    def __init__(self, bot, nlp, imagen_analyzer, cycle_tracker, audio_analyzer, sentiment_analyzer):
+    def __init__(self, bot, nlp, imagen_analyzer, cycle_tracker, audio_analyzer, sentiment_analyzer, google_auth):
         self.bot = bot
         self.nlp = nlp
         self.imagen_analyzer = imagen_analyzer
         self.audio_analyzer = audio_analyzer
         self.cycle_tracker = cycle_tracker
         self.sentiment_analyzer = sentiment_analyzer
+        self.google_auth = google_auth
+        self.google_calendar = GoogleCalendarClient(self.google_auth.token_storage)
         self.modos= {}
         self._registrar_rutas()
-        # self.signo_zodiacal = self.obtener_signo()
-
+        
     # ============================
     # MENU PRINCIPAL
     # ============================
@@ -31,50 +33,7 @@ class Router:
             types.InlineKeyboardButton("Quiero hablar de cómo me siento", callback_data="sentimientos"),
             types.InlineKeyboardButton("Mi cuerpo y mis síntomas", callback_data="sintomas"),
             types.InlineKeyboardButton("Registrar mi ciclo", callback_data="ciclo"),
-            types.InlineKeyboardButton("Sorprendeme 💫", callback_data="sorpresa")
-  
-        ]
-        teclado.add(*botones)
-
-        self.bot.send_message(
-            chat_id,
-            "🌸 *MENÚ PRINCIPAL*\n¡Elige una opción o comienza a chatear conmigo!",
-            parse_mode="Markdown",
-            reply_markup=teclado
-        )
-
-    # ============================
-    # HANDLERS
-    # ============================
-    def _registrar_rutas(self):
-
-        @self.bot.message_handler(commands=['start', 'help'])
-        def menu(message):
-            self.modos[message.chat.id] = "menu"
-            self.bot.send_message(message.chat.id, "Hola, soy OvulAI, tu bot de confianza. Estoy acá para acompañarte y escucharte 💕Contame, ¿qué necesitás hoy?")
-            self._mostrar_menu(message.chat.id)
-
-        @self.bot.message_handler(func=lambda message: message.text.lower() in ["volver al menú", "🔙 volver al menú"])
-        def volver_al_menu(message):
-            chat_id = message.chat.id
-            self.modos[chat_id] = "menu"
-
-            markup_vacio = types.ReplyKeyboardRemove()
-            self.bot.send_message(chat_id, "🔙 Volviendo al menú principal...", reply_markup=markup_vacio)
-
-            self._mostrar_menu(chat_id)
-
-
-
-    # ============================
-    # MENU PRINCIPAL
-    # ============================
-    def _mostrar_menu(self, chat_id):
-        teclado = types.InlineKeyboardMarkup()
-        botones = [
-            types.InlineKeyboardButton("Quiero hablar de cómo me siento", callback_data="sentimientos"),
-            types.InlineKeyboardButton("Mi cuerpo y mis síntomas", callback_data="sintomas"),
-            types.InlineKeyboardButton("Registrar mi ciclo", callback_data="ciclo"),
+            types.InlineKeyboardButton("Conectar mi calendario", callback_data="google_auth"),
             types.InlineKeyboardButton("Sorprendeme 💫", callback_data="sorpresa")
   
         ]
@@ -105,7 +64,7 @@ class Router:
             self.modos[chat_id] = "menu"
             self._mostrar_menu(chat_id)
 
-        @self.bot.callback_query_handler(func=lambda call: call.data in["sentimientos", "sintomas", "ciclo", "sorpresa", "volver_menu"])
+        @self.bot.callback_query_handler(func=lambda call: call.data in["sentimientos", "sintomas", "ciclo", "sorpresa", "volver_menu", "google_auth"])
         def manejar_click_boton(call):
             chat_id = call.message.chat.id
 
@@ -123,13 +82,33 @@ class Router:
                 self.modos[chat_id] = "ciclo"
                 self._mostrar_boton_volver(chat_id, "📅 Escribí la fecha de tu último período (DD/MM/AAAA).")
                 self.bot.register_next_step_handler(call.message, self._procesar_fecha_ciclo)
-                fase = self.cycle_tracker.calcular_estado(str(call.message.chat.id))['fase']
+                estado_temp = self.cycle_tracker.calcular_estado(str(call.message.chat.id))
+                if estado_temp:
+                    fase = estado_temp.get('fase')
 
             elif call.data == "sintomas":
                 self.modos[chat_id] = "sintomas"
                 self._mostrar_sintomas(chat_id)
                 self.bot.register_next_step_handler(call.message, self._dar_recomendaciones_fase)
 
+            elif call.data =="google_auth":
+                # Verifica si el usuario ya tiene tokens almacenados; si los tiene, informar y no generar link
+                tokens = self.google_auth.obtener_tokens(str(chat_id))
+                if tokens:
+                    self.bot.send_message(
+                        chat_id,
+                        "✅ Tu cuenta de Google ya está conectada y sincronizada con el calendario."
+                    )
+                    self.modos[chat_id] = "menu"
+                    self._mostrar_menu(chat_id)
+                else:
+                    link = self.google_auth.generar_link_autorizacion(chat_id)
+                    self.bot.send_message(
+                        chat_id,
+                        f"Para conectar tu cuenta de Google y sincronizar tu ciclo con tu calendario, hacé click en el siguiente enlace:\n\n{link}"
+                    )
+                    self.modos[chat_id] = "menu"
+                    self._mostrar_menu(chat_id)
 
             elif call.data == "sorpresa":
                 self.modos[chat_id] = "sorpresa"
@@ -138,9 +117,7 @@ class Router:
                 opcion = random.choice(opciones)
 
                 try:
-                    
-                    # Leer horócopo
-
+                    # Leer horóscopo
                     if opcion == "horoscopo":
                         self.bot.send_message(chat_id, "Hoy toca: Tu horóscopo del día 🔮")
                         self.obtener_signo(call.message)
@@ -258,7 +235,6 @@ class Router:
     # ============================
     # FUNCIONALIDADES
     # ============================
-
     # ============================
     #     MODO "SENTIMIENTOS"
     # ============================
@@ -320,6 +296,16 @@ class Router:
             self.cycle_tracker.registrar_fecha(chat_id, fecha)
             estado = self.cycle_tracker.calcular_estado(chat_id)
             self.bot.reply_to(message, f"¡Fecha registrada! Estás en la fase: '{estado['fase']}'. Para más info, por favor volvé al menú y seleccioná 'Mi cuerpo y mis síntomas' 🌼🩷.")
+            
+            if not self.google_auth.obtener_tokens(chat_id):
+                self.bot.send_message(
+                    chat_id,
+                    "⚠️ Aún no conectaste tu cuenta de Google Calendar. "
+                    "Podés hacerlo desde el menú principal con el botón 'Conectar con Google' 🔗"
+                )
+            else:
+                proximo = self.google_calendar.crear_eventos_ciclo(chat_id, fecha)
+                
             self.modos[int(chat_id)] = "menu"
             self._mostrar_menu(int(chat_id))
 

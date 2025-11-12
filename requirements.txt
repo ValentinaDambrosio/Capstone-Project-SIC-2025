@@ -29,3 +29,4 @@ transformers==4.54.1
 typing_extensions==4.14.1
 urllib3==2.5.0
 pyTelegramBotAPI
+deep-translator

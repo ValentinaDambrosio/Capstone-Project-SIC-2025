@@ -5,6 +5,7 @@ from procesadores.descripcion_imagen import AnalizadorImagen
 from procesadores.procesador_audio import AnalizadorAudio
 from procesadores.analisis_sentimiento import AnalizadorSentimiento
 from ciclo.seguimiento_ciclo import CycleTracker
+from core.google_auth import GoogleAuthService
 from core.router import Router
 
 class TelegramBotHandler:
@@ -18,7 +19,8 @@ class TelegramBotHandler:
         self.seguimiento_ciclo = CycleTracker()
         self.audio_analyzer = AnalizadorAudio()
         self.sentiment_analyzer = AnalizadorSentimiento()
-        self.router = Router(self.bot, self.nlp, self.imagen_analyzer, self.seguimiento_ciclo, self.audio_analyzer, self.sentiment_analyzer)
+        self.google_auth = GoogleAuthService()
+        self.router = Router(self.bot, self.nlp, self.imagen_analyzer, self.seguimiento_ciclo, self.audio_analyzer, self.sentiment_analyzer, self.google_auth)
 
     def iniciar(self):
         print("🤖 Bot inicializado...")
