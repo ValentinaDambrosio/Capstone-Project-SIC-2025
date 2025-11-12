@@ -1,0 +1,87 @@
+[
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Qué tipo de ejercicio puedo hacer?",
+    "respuesta": "Optá por movimientos suaves como yoga, estiramientos o caminatas lentas. Escuchá a tu cuerpo y no te exijas demasiado 🩸."
+  },
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Qué alimentos me ayudan?",
+    "respuesta": "Comé comidas ricas en hierro y magnesio como espinaca, lentejas, frutos secos y chocolate negro. Ayuda a reducir cansancio y calambres 🥗."
+  },
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Cómo puedo cuidar mi bienestar emocional?",
+    "respuesta": "Tomate tiempo para vos, meditación suave, respiración profunda y escuchar música relajante pueden mejorar tu ánimo y reducir estrés 🎶."
+  },
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Es bueno hacer yoga cuando estoy menstruando?",
+    "respuesta": "Sí, pero evitá posturas invertidas o muy intensas. Elegí asanas restaurativas que alivien el dolor abdominal y relajen la espalda baja 🧘‍♀️."
+  },
+  {
+    "fase": "Fase folicular",
+    "pregunta": "¿Qué tipo de entrenamiento es ideal en la fase folicular?",
+    "respuesta": "Aumenta tu intensidad progresivamente. Este es un gran momento para rutinas de fuerza, cardio o clases grupales 💪."
+  },
+  {
+    "fase": "Fase folicular",
+    "pregunta": "¿Qué alimentos me recomendás?",
+    "respuesta": "Consumí proteínas magras, frutas frescas, cereales integrales y semillas. Ayudan a mantener energía estable y concentración durante la fase folicular 🥑🍓."
+  },
+  {
+    "fase": "Fase folicular",
+    "pregunta": "¿Cómo puedo mejorar mi bienestar emocional?",
+    "respuesta": "Planificar actividades que te gusten, socializar y meditar ayudan a aprovechar tu estado de ánimo positivo y tu energía alta 🌞."
+  },
+  {
+    "fase": "Fase folicular",
+    "pregunta": "¿Puedo hacer ejercicios de alta intensidad?",
+    "respuesta": "Sí, este es el mejor momento para hacerlo. HIIT, spinning o baile son excelentes opciones porque el cuerpo se recupera más rápido 🔥."
+  },
+    {
+    "fase": "Fase folicular",
+    "pregunta": "¿Qué ejercicios debería hacer?",
+    "respuesta": "Tu energía está en aumento. HIIT, spinning o baile son excelentes opciones porque el cuerpo se recupera más rápido 🔥."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Qué tipo de entrenamiento me recomendás?",
+    "respuesta": "Tu energía y coordinación están al máximo 🌟. Es ideal para deportes en equipo, correr o rutinas que desafíen tu rendimiento físico."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Qué alimentos debería comer?",
+    "respuesta": "Incluí frutas antioxidantes, verduras de hoja verde, semillas y proteínas magras. Esto ayuda a sostener tu energía y vitalidad 💫."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Cómo puedo cuidar mi bienestar emocional?",
+    "respuesta": "Aprovechá tu energía para socializar, expresarte y hacer actividades creativas. El movimiento físico intenso también ayuda a liberar endorfinas 🎨🏃‍♀️."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Puedo hacer ejercicios de alta exigencia como crossfit o sprints?",
+    "respuesta": "Sí, tu cuerpo está preparado para desafíos. Recordá hidratarte bien y dormir suficiente para evitar fatiga 💧💤."
+  },
+  {
+    "fase": "Fase lútea",
+    "pregunta": "¿Qué tipo de ejercicios son mejores en esta fase?",
+    "respuesta": "Puede que tu energía en esta fase se vea disminuida. Elegí entrenamientos moderados y de bajo impacto como pilates, caminatas o bicicleta. Tu cuerpo puede sentirse más lento y con menor resistencia 💆‍♀️."
+  },
+  {
+    "fase": "Fase lútea",
+    "pregunta": "¿Qué alimentos me recomendás?",
+    "respuesta": "Consumí alimentos ricos en fibra y agua como frutas, verduras y legumbres. Evitá exceso de sal y cafeína 🌿."
+  },
+  {
+    "fase": "Fase lútea",
+    "pregunta": "¿Cómo puedo cuidar mi bienestar emocional?",
+    "respuesta": "Actividades relajantes como yoga, meditación o escuchar música calmada ayudan a disminuir irritabilidad y ansiedad 🌙."
+  },
+  {
+    "fase": "Fase lútea",
+    "pregunta": "¿Debería evitar entrenamientos muy exigentes?",
+    "respuesta": "Sí, porque la progesterona puede aumentar la fatiga. Mantené el enfoque en moverte sin forzarte demasiado 🌕."
+  }
+]

@@ -13,7 +13,7 @@ class TelegramBotHandler:
         self.bot = telebot.TeleBot(self.token)
 
         # Instancias de módulos
-        self.nlp = NLPProcessor("dataset.json")
+        self.nlp = NLPProcessor("dt_preguntas.json")
         self.imagen_analyzer = AnalizadorImagen()
         self.seguimiento_ciclo = CycleTracker()
         self.audio_analyzer = AnalizadorAudio()
