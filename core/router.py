@@ -105,7 +105,8 @@ class Router:
                     link = self.google_auth.generar_link_autorizacion(chat_id)
                     self.bot.send_message(
                         chat_id,
-                        f"Para conectar tu cuenta de Google y sincronizar tu ciclo con tu calendario, hacé click en el siguiente enlace:\n\n{link}"
+                        f"Para conectar tu cuenta de Google y sincronizar tu ciclo con tu calendario, hacé click en el siguiente enlace:\n\n[🌷🔗 Conectar con mi calendario]({link})",
+                        parse_mode = "Markdown"
                     )
                     self.modos[chat_id] = "menu"
                     self._mostrar_menu(chat_id)
