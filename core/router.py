@@ -28,7 +28,7 @@ class Router:
     # MENU PRINCIPAL
     # ============================
     def _mostrar_menu(self, chat_id):
-        teclado = types.InlineKeyboardMarkup()
+        teclado = types.InlineKeyboardMarkup(row_width=1)
         botones = [
             types.InlineKeyboardButton("Quiero hablar de cómo me siento", callback_data="sentimientos"),
             types.InlineKeyboardButton("Mi cuerpo y mis síntomas", callback_data="sintomas"),
