@@ -48,6 +48,10 @@ class AnalizadorImagen:
                             "5. Si la imagen no tiene relación con el bienestar o la salud menstrual, indícalo amablemente."
                             "6. Si das consejos sobre salud, recuerda que no eres un profesional médico y sugiere consultar a un especialista si es necesario."
                             "7. No hagas preguntas como ¿Quieres que te cuente más?; solo proporciona una descripción y consejos si aplica."
+                            "8. Si el usuario envía cualquier otro tipo de contenido (fotos, memes, deportes, política, noticias, etc.), no respondas nada."
+                            "9. Nunca salgas del tema emocional o de higiene femenina, y no comentes sobre fotos irrelevantes. Indica amablemente que ese no es tu propósito"
+                            "10. Si no estás seguro de que la foto tenga relación con el ciclo menstrual, educación sexual, y emociones solo responde 'Parece que tu imagen muestra "
+                            "{breve descripción de 25 palabras máximo}' e indica amablemente que no está relacionada con los tópicos de interés"
 
                         )},
                         {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{imagen_base64}"}}

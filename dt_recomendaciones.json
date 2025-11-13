@@ -6,7 +6,7 @@
   },
   {
     "fase": "Menstruación",
-    "pregunta": "¿Qué alimentos son recomendables?",
+    "pregunta": "¿Qué alimentos son recomendables o mejores?",
     "respuesta": "Elegí comidas ricas en hierro y magnesio: espinaca, lentejas, garbanzos, frutos secos y chocolate amargo. Ayudan a reducir cansancio y calambres 🥗."
   },
   {
@@ -39,14 +39,55 @@
     "pregunta": "¿Qué puedo hacer para tener más energía?",
     "respuesta": "Dormí bien, tomá suficiente agua y hacé actividades tranquilas. El cuerpo gasta más energía durante esta etapa, cuidate sin culpas 💪."
   },
+  {"fase": "Menstruación",
+    "pregunta": "¿Por qué me siento más sensible emocionalmente?",
+    "respuesta": "Los cambios hormonales afectan el cerebro y las emociones. Es normal sentirse más sensible. Practicar autocuidado y hablar sobre lo que sentís ayuda mucho 🌸."
+  },
+  {"fase": "Menstruación",
+    "pregunta": "¿Cómo puedo aliviar los calambres menstruales?",
+    "respuesta": "Aplicar calor en el abdomen, hacer estiramientos suaves y tomar infusiones de manzanilla o jengibre pueden ayudar a reducir el dolor 🌿."
+  },
+  {"fase": "Menstruación",
+   "pregunta": "¿Qué productos de higiene o absorción son recomendables?",
+   "respuesta": "Podés usar toallas sanitarias, tampones o copas menstruales según tu comodidad. Cambialos regularmente para evitar infecciones y mantener una buena higiene 🩸."},
+  
+   {"fase": "Menstruación",
+   "pregunta": "¿Qué pasa si el tampón se queda adentro?",
+   "respuesta": "Si un tampón queda adentro, intentá relajarte y retirarlo suavemente con los dedos. Si no podés sacarlo o sentís dolor, consultá a un profesional de salud para que te ayude 🏥."},
+   {
+    "fase": "Menstruación",
+    "pregunta": "¿Puedo usar anticonceptivos hormonales para regular mi ciclo?",
+    "respuesta": "Sí, los anticonceptivos hormonales pueden ayudar a regular la menstruación, reducir dolor y sangrado abundante. Siempre deben usarse bajo indicación médica."
+  },
+
+  {
+    "fase": "Menstruación",
+    "pregunta": "¿Cómo afecta la lactancia a mi menstruación?",
+    "respuesta": "Durante la lactancia exclusiva, algunas personas no ovulan y la menstruación puede retrasarse o desaparecer temporalmente. Esto es normal, pero varía según cada persona."
+  },
+   {
+    "fase": "Fase folicular",
+    "pregunta": "¿Es posible quedar embarazada en la fase folicular?",
+    "respuesta": "Sí, aunque el momento más fértil es cerca de la ovulación, mantener relaciones sexuales durante la fase folicular puede llevar a embarazo si la ovulación ocurre antes de lo esperado."
+  },
   {
     "fase": "Fase folicular",
-    "pregunta": "¿Qué ejercicios son ideales?",
+    "pregunta": "¿Cómo se relaciona el flujo menstrual con la fase folicular?",
+    "respuesta": "Al inicio de la fase folicular suele terminar la menstruación. El flujo puede ser más claro o escaso a medida que los niveles de estrógeno aumentan, preparando el cuerpo para la ovulación."
+  },
+  {
+    "fase": "Fase folicular",
+    "pregunta": "¿Qué cambios físicos o emocionales puedo notar?",
+    "respuesta": "Muchas personas sienten más energía, mejor ánimo y aumento de la libido durante la fase folicular debido a los niveles crecientes de estrógeno. También puede haber cambios en la piel y el cabello."
+  },
+  {
+    "fase": "Fase folicular",
+    "pregunta": "¿Qué ejercicios recomendas o son mejores?",
     "respuesta": "Tu energía va en aumento. Aprovechá para hacer rutinas de fuerza, cardio o probar algo nuevo como danza o natación 🔥."
   },
   {
     "fase": "Fase folicular",
-    "pregunta": "¿Qué alimentos me ayudan?",
+    "pregunta": "¿Qué alimentos me ayudan o me recomendas?",
     "respuesta": "Comé proteínas magras, frutas frescas, cereales integrales y semillas. Te van a dar energía constante y claridad mental 🍓🥑."
   },
   {
@@ -74,6 +115,43 @@
     "pregunta": "¿Es buen momento para aprender cosas nuevas?",
     "respuesta": "Sí, tu concentración y memoria están altas. Aprovechá para estudiar o encarar proyectos nuevos 📚."
   },
+  
+    {
+    "fase": "Ovulación",
+    "pregunta": "¿Qué es la ovulación?",
+    "respuesta": "La ovulación es el proceso durante el cual un ovario libera un óvulo maduro listo para ser fecundado. Ocurre aproximadamente a mitad del ciclo menstrual, cuando los niveles de hormona luteinizante (LH) alcanzan su pico."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Cuánto dura la ovulación?",
+    "respuesta": "La liberación del óvulo dura solo unas pocas horas, pero el periodo fértil puede extenderse hasta 5 días antes de la ovulación y 1 día después, debido a la supervivencia del esperma y del óvulo."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Cómo puedo saber cuándo estoy ovulando?",
+    "respuesta": "Se puede detectar mediante cambios en el flujo cervical (más claro y elástico), aumento de la temperatura basal, dolor leve en el abdomen inferior o mediante kits de predicción de ovulación que miden la hormona LH en la orina."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Es posible quedar embarazada solo durante la ovulación?",
+    "respuesta": "El embarazo es más probable durante la ovulación, pero también es posible días antes, ya que el esperma puede sobrevivir varios días en el cuerpo. Por eso el periodo fértil abarca varios días, no solo la ovulación exacta."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Qué cambios hormonales ocurren durante la ovulación?",
+    "respuesta": "Durante la ovulación, aumenta la hormona luteinizante (LH) y el estrógeno alcanza su pico máximo. Esto provoca la liberación del óvulo y prepara el cuerpo para una posible fecundación."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿Qué síntomas físicos pueden indicar que estoy ovulando?",
+    "respuesta": "Algunas personas experimentan dolor leve o sensibilidad en un lado del abdomen, aumento de la libido, flujo cervical transparente y elástico, y sensación de mayor energía o bienestar."
+  },
+  {
+    "fase": "Ovulación",
+    "pregunta": "¿La ovulación afecta mi estado de ánimo?",
+    "respuesta": "Sí, los niveles elevados de estrógeno durante la ovulación pueden mejorar el estado de ánimo, aumentar la sociabilidad y la motivación. Algunas personas notan mayor confianza y energía."
+  },
+  
   {
     "fase": "Ovulación",
     "pregunta": "¿Qué entrenamiento es mejor?",
@@ -109,6 +187,13 @@
     "pregunta": "¿Por qué me siento más segura o atractiva?",
     "respuesta": "Las hormonas aumentan tu energía y confianza. Aprovechá esa sensación para actividades sociales o personales ✨."
   },
+
+  {
+    "fase": "Ovulación",
+    "pregunta": "Signos?",
+    "respuesta": "Flujo cervical claro y elástico, dolor leve en el abdomen inferior, mayor libido y energía."
+  },
+
   {
     "fase": "Fase lútea",
     "pregunta": "¿Qué ejercicios son recomendables?",
