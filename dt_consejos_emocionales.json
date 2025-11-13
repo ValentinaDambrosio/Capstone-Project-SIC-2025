@@ -93,5 +93,165 @@
 
   {"pregunta": "Me siento inspirado y motivado", "respuesta": "Aprovechá esa energía ✨💛. La inspiración y motivación son herramientas poderosas para crear, aprender o avanzar en tus metas. Permitite canalizar esta fuerza de manera positiva y disfrutar del proceso mientras fortalecés tu bienestar emocional."},
 
-  {"pregunta": "Estoy agradecido y en paz", "respuesta": "Reconocer lo positivo y sentir paz fortalece tu bienestar emocional 🌸🧘. Permitite reflexionar, agradecer y disfrutar de este estado de calma. La gratitud y la paz interior ayudan a mantener equilibrio, claridad y satisfacción en tu vida diaria."}
+  {"pregunta": "Estoy agradecido y en paz", "respuesta": "Reconocer lo positivo y sentir paz fortalece tu bienestar emocional 🌸🧘. Permitite reflexionar, agradecer y disfrutar de este estado de calma. La gratitud y la paz interior ayudan a mantener equilibrio, claridad y satisfacción en tu vida diaria."},
+   {
+    "pregunta": "Me siento sin energía",
+    "respuesta": "A veces el cuerpo solo pide descanso 😴. Permitite bajar un cambio, respirar profundo y hacer algo suave que te haga bien. Cuidarte es esencial para recuperar tu energía y bienestar 💛."
+  },
+  {
+    "pregunta": "Estoy muy sensible hoy",
+    "respuesta": "La sensibilidad es parte de ser humano 💕. Escuchate, tratate con amabilidad y permitite sentir sin culpas. A veces el corazón solo necesita un poco más de cuidado."
+  },
+  {
+    "pregunta": "Tengo la mente muy cargada",
+    "respuesta": "Cuando tu mente está llena, hacer una pausa ayuda 🌿. Respirar un minuto, caminar o escribir tus pensamientos puede aliviarte. Permitite soltar lo que no necesitás."
+  },
+  {
+    "pregunta": "Estoy de mal humor",
+    "respuesta": "Está bien tener días malos 😤. Tomate un espacio, movete un poco o escuchá algo que te calme. Tu emoción es válida y cuidarte ayuda a recuperar tu equilibrio 💛."
+  },
+  {
+    "pregunta": "Me siento vacío",
+    "respuesta": "Esa sensación puede ser pesada 😔. Tratate con suavidad, conectá con algo que te guste o hablá con alguien de confianza. No estás solo, tus emociones importan."
+  },
+  {
+    "pregunta": "Estoy desmotivado",
+    "respuesta": "La desmotivación es temporal 🌙. Comenzá por un paso pequeño, algo simple. Cada mini avance cuenta y puede ayudarte a volver a sentir impulso y claridad 💛."
+  },
+  {
+    "pregunta": "No tengo ganas de nada",
+    "respuesta": "Está bien sentir apatía a veces 😞. Permitite descansar, hacer algo pequeño o simplemente estar presente. Escucharte sin exigirte es una forma de cuidado."
+  },
+  {
+    "pregunta": "Me siento enojado conmigo mismo",
+    "respuesta": "Sé amable con vos 💛. Todos cometemos errores. Respirar, escribir lo que sentís o hablar con alguien de confianza puede ayudarte a bajar la tensión."
+  },
+  {
+    "pregunta": "Estoy frustrado conmigo",
+    "respuesta": "La autocompasión es clave 🌿. Reconocé tu esfuerzo aunque no haya salido perfecto. Permitite aprender sin castigarte. Estás haciendo lo mejor que podés."
+  },
+  {
+    "pregunta": "Me siento inseguro con mis decisiones",
+    "respuesta": "Es normal dudar 💭. Tomate tu tiempo, respirá y recordá decisiones que tomaste bien en el pasado. Ya tenés herramientas dentro tuyo 💛."
+  },
+  {
+    "pregunta": "Tengo pensamientos negativos",
+    "respuesta": "Los pensamientos negativos son comunes 😔. Tratá de observarlos sin juzgarte, como si fueran nubes pasando. Respirar o escribirlos puede ayudarte a soltarlos."
+  },
+  {
+    "pregunta": "Siento mucha presión",
+    "respuesta": "La presión puede abrumar 🌀. Hacé una pausa, dividí lo que tengas que hacer en partes pequeñas y recordá que tu bienestar va primero."
+  },
+  {
+    "pregunta": "Me cuesta respirar del estrés",
+    "respuesta": "Probá respirar lento y profundo 🌬️.\nInhalá 4 segundos… exhalá 6.\nRepetilo varias veces. Tu cuerpo agradece estos pequeños momentos de calma 💛."
+  },
+  {
+    "pregunta": "Tengo pensamientos que no puedo parar",
+    "respuesta": "La mente a veces se acelera 🌙. Hacé una pausa, respirá profundo o escribí lo que pensás. Ordenarlo afuera ayuda a bajar la intensidad."
+  },
+  {
+    "pregunta": "Estoy sobrepensando todo",
+    "respuesta": "Sobrepensar es agotador 😵‍💫. Intentá volver al presente: mirá a tu alrededor, nombrá 3 cosas que ves, 2 que escuchás y 1 que sentís. Te ayuda a bajar a tierra."
+  },
+  {
+    "pregunta": "Me siento culpable",
+    "respuesta": "La culpa puede ser pesada 💔. Reconocé tu emoción y tratate con suavidad. Pensar qué podés aprender de la situación te ayuda a sanar sin castigarte."
+  },
+  {
+    "pregunta": "Estoy perdiendo el control",
+    "respuesta": "Hacé una pausa 🌬️. Apoyá los pies en el suelo, respirá profundo y recordá que las emociones pasan. No estás solo, podés volver a tu centro de a poquito 💛."
+  },
+  {
+    "pregunta": "Me siento confundido emocionalmente",
+    "respuesta": "Es normal no entender todo lo que uno siente 💛. Escribí, hablá o tomate un momento en silencio. Darle espacio a tus emociones ayuda a ordenarlas."
+  },
+  {
+    "pregunta": "Me siento desbordado",
+    "respuesta": "Cuando todo abruma, hacer menos ayuda 🌿. Priorizá, frená y cuidate. No tenés que poder con todo al mismo tiempo."
+  },
+  {
+    "pregunta": "Tengo el corazón apretado",
+    "respuesta": "Esa sensación habla de que algo te importa 💛. Respirar profundo, estirarte o hablarlo con alguien puede ayudarte a aflojar esa tensión."
+  },
+  {
+    "pregunta": "Estoy muy nervioso hoy",
+    "respuesta": "Los nervios aparecen cuando algo nos mueve 🌬️. Probá respiraciones lentas, caminar o hacer algo suave que te calme. Tu cuerpo está pidiendo cuidado."
+  },
+  {
+    "pregunta": "Me siento incapaz",
+    "respuesta": "Esa emoción duele 💔, pero no define tu valor. Recordá momentos en los que pudiste con cosas difíciles. Ya superaste mucho. Sos más fuerte de lo que pensás 💛."
+  },
+  {
+    "pregunta": "Estoy muy tenso",
+    "respuesta": "La tensión se acumula en el cuerpo 🧘. Probá estirarte, mover los hombros o respirar profundo. Soltar un poquito ayuda mucho."
+  },
+  {
+    "pregunta": "Me siento desconectado de todo",
+    "respuesta": "A veces la mente se desconecta para protegerte 🌙. Reconectá de a poco: mirá algo que te guste, escuchá música suave o hacé una pausa consciente."
+  },
+  {
+    "pregunta": "Siento que no avanzo",
+    "respuesta": "Aunque no lo notes, avanzar también es descansar, pensar, sentir 💛. Valorá tu proceso. Todo paso cuenta, incluso los pequeños."
+  },
+  {
+    "pregunta": "Estoy de mal día",
+    "respuesta": "Está bien tener días pesados 🌧️. Permitite descansar, hacer algo que disfrutes o darte un momento de calma. Mañana puede sentirse distinto."
+  },
+  {
+    "pregunta": "Me siento vulnerable",
+    "respuesta": "La vulnerabilidad es una muestra de valentía 💗. Permitite sentir sin juzgarte. Es un espacio donde también nace la conexión y el crecimiento."
+  },
+  {
+    "pregunta": "Me siento perdido",
+    "respuesta": "A veces no saber es parte del camino 🌙. Respirar, ordenar ideas o hablar con alguien puede ayudarte a encontrar claridad. No estás solo."
+  },
+  {
+    "pregunta": "Estoy preocupado por algo que no controlo",
+    "respuesta": "Es normal que eso genere ansiedad 😔. Enfocate en lo que sí podés manejar hoy y permitite soltar lo demás. Tu paz también importa 💛."
+  },
+  {
+    "pregunta": "Me siento triste sin razón",
+    "respuesta": "Las emociones no siempre tienen explicación 💛. A veces solo surgen. Permitite sentir, cuidarte y buscar calma. Está bien no estar perfectamente bien."
+  },
+  {
+    "pregunta": "Estoy muy cansado emocionalmente",
+    "respuesta": "El cansancio emocional pesa más que el físico 😢. Date descanso, bajá exigencias y hacé cosas suaves que te den alivio. Te merecés calma."
+  },
+  {
+    "pregunta": "Siento que todo me supera",
+    "respuesta": "Es una señal de que necesitás frenar 🫂. Priorizá tu bienestar, tomá pausas y recordá que pedir ayuda también es valentía."
+  },
+  {
+    "pregunta": "Estoy inquieto",
+    "respuesta": "La inquietud suele venir del estrés o la ansiedad 🌬️. Moverte un poquito, estirarte o respirar lento puede ayudarte a sentir más calma."
+  },
+  {
+    "pregunta": "Me siento estancado",
+    "respuesta": "El estancamiento también es parte del proceso de crecer 🌱. Un paso pequeño o cambiar de enfoque puede ayudar a reactivar tu energía."
+  },
+  {
+    "pregunta": "Estoy muy emotivo",
+    "respuesta": "Las emociones están más a flor de piel algunos días 💗. Permitite sentirlas sin culpa, abrazá tu sensibilidad y cuidate con suavidad."
+  },
+  {
+    "pregunta": "Me siento calmado",
+    "respuesta": "Qué lindo que te sientas así 🌿. Aprovechá esta paz para descansar, agradecer y recargar energía. La calma es un regalo para tu bienestar."
+  },
+  {
+    "pregunta": "Estoy orgulloso de lo que hice hoy",
+    "respuesta": "¡Bien ahí! 💪 Celebrar tus logros fortalece tu autoestima y tu bienestar emocional. Permitite disfrutar esa sensación."
+  },
+  {
+    "pregunta": "Me siento acompañado",
+    "respuesta": "Qué hermoso sentir compañía 💛. Valorá esos vínculos que te hacen bien. La conexión con otros fortalece tu bienestar y tu corazón."
+  },
+  {
+    "pregunta": "Tengo ganas de empezar cosas nuevas",
+    "respuesta": "Esa energía es especial ✨. Aprovechala para dar pasos pequeños, explorar ideas y conectar con tu creatividad y entusiasmo."
+  },
+  {
+    "pregunta": "Me siento satisfecho conmigo",
+    "respuesta": "Qué valioso reconocer eso 💛. Permitite disfrutarlo, celebrarlo y guardar ese sentimiento para esos días en los que lo necesites."
+  }
 ]
