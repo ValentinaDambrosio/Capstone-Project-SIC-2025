@@ -34,7 +34,8 @@ class Router:
             types.InlineKeyboardButton("Mi cuerpo y mis síntomas", callback_data="sintomas"),
             types.InlineKeyboardButton("Registrar mi ciclo", callback_data="ciclo"),
             types.InlineKeyboardButton("Conectar mi calendario", callback_data="google_auth"),
-            types.InlineKeyboardButton("Sorprendeme 💫", callback_data="sorpresa")
+            types.InlineKeyboardButton("Sorprendeme 💫", callback_data="sorpresa"),
+            types.InlineKeyboardButton("Información OvulAI", callback_data="info")
   
         ]
         teclado.add(*botones)
@@ -64,7 +65,7 @@ class Router:
             self.modos[chat_id] = "menu"
             self._mostrar_menu(chat_id)
 
-        @self.bot.callback_query_handler(func=lambda call: call.data in["sentimientos", "sintomas", "ciclo", "sorpresa", "volver_menu", "google_auth"])
+        @self.bot.callback_query_handler(func=lambda call: call.data in["sentimientos", "sintomas", "ciclo", "sorpresa", "volver_menu", "google_auth", "info"])
         def manejar_click_boton(call):
             chat_id = call.message.chat.id
 
@@ -161,6 +162,38 @@ class Router:
                 
                 self.modos[chat_id] = "menu"
                 self._mostrar_menu(chat_id)
+           
+            elif call.data == "info":
+                info_texto = (
+                                "🌸 *Información sobre OvulAI* 🌸\n\n"
+                                    "¡Hola! Soy *OvulAI*, tu asistente de confianza 💕. Estoy aquí para acompañarte en temas de emociones, autocuidado y seguimiento de tu ciclo menstrual.\n\n"
+                                    "Conmigo podés:\n"
+                                    "💬 Hablar de cómo te sentís y recibir consejos emocionales.\n"
+                                    "📅 Registrar tu ciclo menstrual y obtener recomendaciones personalizadas según tu fase.\n"
+                                    "🩷 Consultar sobre tu cuerpo y tus síntomas.\n"
+                                    "💫 Sorprenderte con frases, horóscopos o imágenes que alegren tu día.\n\n"
+                                    "🔗 También podés conectar tu calendario de Google para sincronizar tus ciclos.\n\n"
+                                    "Recordá que estoy para escucharte y acompañarte, pero no reemplazo la atención profesional en salud mental o médica. Siempre cuidá de vos primero 💛."
+                            )
+                info_botones = (
+                    "*¿Cómo funciona el menú? 🌷*\n\n"
+                    "1️⃣ *Quiero hablar de cómo me siento*: Contame cómo te sentís y recibirás consejos emocionales personalizados.\n"
+                    "2️⃣ *Mi cuerpo y mis síntomas*: Consultá sobre tu ciclo y obtené recomendaciones según tu fase menstrual.\n"
+                    "3️⃣ *Registrar mi ciclo*: Guardá la fecha de tu última menstruación para recibir información personalizada.\n"
+                    "4️⃣ *Conectar mi calendario*: Sincronizá tu ciclo con Google Calendar para recibir recordatorios.\n"
+                    "5️⃣ *Sorprendeme 💫*: Recibí frases inspiradoras, horóscopos o imágenes para alegrar tu día.\n"
+                    "6️⃣ *Información OvulAI*: Este mensaje que estás leyendo 😄.\n\n"
+                    "💡 *Tips de uso*:\n"
+                    "- Usá los botones del menú para navegar rápidamente.\n"
+                    "- Podés volver al menú principal en cualquier momento con '🔙 Volver al menú'.\n"
+                    "- Si escribís algo que no corresponde a los botones, no hay problema: buscaré en mi *dataset* si es un mensaje de texto o usaré la IA si se trata de audios o imágenes para darte una respuesta útil.\n"
+                )
+                self.bot.send_message(chat_id, info_texto, parse_mode = "Markdown")
+                self.bot.send_message(chat_id, info_botones, parse_mode = "Markdown")
+                self.bot.send_message(chat_id, "*¡Comencemos! 🪷*", parse_mode = "Markdown")
+                self.modos[chat_id] = "menu"
+                self._mostrar_menu(chat_id)
+
 
         @self.bot.message_handler(content_types=['photo'])
         def manejar_imagen(message):
@@ -190,8 +223,8 @@ class Router:
             elif modo == "ciclo":
                 self._procesar_fecha_ciclo(message)
             elif modo == "menu":
-                respuesta = self.nlp.buscar_en_dataset(message.text)
-                self.bot.reply_to(message, respuesta or "No encontré una respuesta exacta 😥. Probá con otra pregunta.")
+                respuesta = self.nlp.buscar_en_dataset(message.text, umbral = 0.7)
+                self.bot.reply_to(message, respuesta or "No encontré una respuesta exacta en mi base de datos. Por favor, probá con otra pregunta.")
             else:
                 self._mostrar_menu(chat_id)
 
@@ -199,6 +232,14 @@ class Router:
         chat_id = message.chat.id
         estado = self.cycle_tracker.calcular_estado(str(chat_id))
 
+        if message.text is None:
+            self.bot.reply_to(
+                                message,
+                                "Vi que enviaste algo que no es texto 💬. Por ahora solo puedo responder a consultas escritas sobre tu ciclo y síntomas. 🌸"
+                            )
+            self.bot.register_next_step_handler(message, self._dar_recomendaciones_fase)
+            return
+        
         if message.text.lower() in ["volver al menú", "🔙 volver al menú"]:
             self.modos[chat_id] = "menu"
             markup_vacio = types.ReplyKeyboardRemove()
@@ -215,10 +256,9 @@ class Router:
         procesador_recomendaciones = MenstrualNLPProcessor("dt_recomendaciones.json", fase)
         texto_usuario = message.text
 
-        respuesta = procesador_recomendaciones.buscar_en_dataset(texto_usuario, umbral=0.4)
-
+        respuesta = procesador_recomendaciones.buscar_en_dataset(texto_usuario, umbral=0.7)
         if respuesta:
-            self.bot.reply_to(message, respuesta)
+            self.bot.reply_to(message, respuesta, parse_mode = "Markdown")
         else:
             self.bot.reply_to(message, "No tengo una respuesta para esta consulta específica. ¿Hay algo más con lo que pueda ayudarte?")
 
@@ -241,7 +281,23 @@ class Router:
     # ============================
 
     def _procesar_sentimiento(self, message):
+        chat_id = message.chat.id
         try:
+            if message.text is None:
+                self.bot.reply_to(
+                            message,
+                            "Vi que enviaste algo que no es texto 💬. Por ahora solo puedo responder a mensajes escritos sobre cómo te sentís. 🌷"
+                                )
+                self.bot.register_next_step_handler(message, self._procesar_sentimiento)
+                return
+            
+            if message.text.lower() in ["volver al menú", "🔙 volver al menú"]:
+                self.modos[chat_id] = "menu"
+                markup_vacio = types.ReplyKeyboardRemove()
+                self.bot.send_message(chat_id, "🔙 Volviendo al menú principal...", reply_markup=markup_vacio)
+                self._mostrar_menu(chat_id)
+                return
+            
             texto = message.text.strip()
 
             resultado = self.sentiment_analyzer.analizar_sentimiento(texto)
@@ -255,7 +311,7 @@ class Router:
 
             respuesta = f"{respuesta_sentimiento}\n\n{consejo}" if consejo else respuesta_sentimiento
 
-            self.bot.reply_to(message, respuesta)
+            self.bot.reply_to(message, respuesta, parse_mode = "Markdown")
 
             if sentimiento == "NEG" and confianza > 0.95:
                 self.mostrar_boton_psicologo(message.chat.id)
