@@ -160,5 +160,161 @@
   {
   "pregunta": "¿Qué es la vaginosis bacteriana?", 
   "respuesta": "La *vaginosis bacteriana* es una infección vaginal común causada por un desequilibrio en las bacterias naturales de la vagina 🌸.\n\nLos síntomas pueden incluir flujo vaginal anormal con olor fuerte, picazón y ardor al orinar. No siempre presenta síntomas, pero puede aumentar el riesgo de contraer ETS. Se trata fácilmente con antibióticos recetados por un profesional de salud 💕." 
+  },
+   {
+    "pregunta": "¿Es normal sentir dolor antes de menstruar?",
+    "respuesta": "Sí 🌸. Muchas personas sienten dolor abdominal, hinchazón, sensibilidad en los pechos o cambios emocionales antes de menstruar. Es parte del síndrome premenstrual.\nSi el dolor es muy fuerte o te impide hacer tu vida normal, es importante consultar con un profesional 💕."
+  },
+  {
+    "pregunta": "¿Qué es el síndrome premenstrual?",
+    "respuesta": "El *síndrome premenstrual (SPM)* incluye síntomas físicos y emocionales que aparecen unos días antes de la menstruación 🌙.\nPodés sentir irritabilidad, tristeza, ansiedad, hinchazón o dolor de cabeza.\nDescanso, hidratación y una dieta equilibrada ayudan mucho 💕."
+  },
+  {
+    "pregunta": "¿Es normal tener ciclos irregulares?",
+    "respuesta": "Sí 🌿. Los ciclos pueden variar especialmente en la adolescencia, por estrés o cambios hormonales.\nSi tus ciclos son muy irregulares por más de 6 meses, conviene hacer una consulta ginecológica para evaluar causas como SOP o tiroides 💗."
+  },
+  {
+    "pregunta": "¿Por qué mi periodo se atrasó?",
+    "respuesta": "Un atraso puede deberse a estrés, cambios hormonales, viajes, ejercicio intenso o embarazo 🌸.\nSi se retrasa más de 7 días, podés hacer un test para descartarlo."
+  },
+  {
+    "pregunta": "¿Qué significa flujo transparente?",
+    "respuesta": "El flujo transparente y elástico suele indicar que estás cerca de tu ovulación 🌼.\nEs completamente normal y muestra que tu cuerpo está en una fase fértil."
+  },
+  {
+    "pregunta": "¿Qué significa flujo marrón?",
+    "respuesta": "El flujo marrón suele ser sangre vieja que el cuerpo está expulsando 🌙.\nAparece al principio o final de la menstruación y es normal. Si es persistente o tiene mal olor, podés consultarlo."
+  },
+  {
+    "pregunta": "¿Es normal sangrar después de tener relaciones?",
+    "respuesta": "Puede pasar ocasionalmente por sensibilidad cervical o falta de lubricación 💕.\nSi ocurre seguido, duele o el sangrado es intenso, conviene consultar a un profesional."
+  },
+  {
+    "pregunta": "Estoy muy estresada, ¿puede afectar mi ciclo?",
+    "respuesta": "Sí 🌿. El estrés aumenta el cortisol, que puede retrasar tu ovulación y mover tu ciclo.\nIntentá descansar, respirar profundo o hablar con alguien de confianza 💗."
+  },
+  {
+    "pregunta": "¿Qué puedo hacer para regular mi ciclo?",
+    "respuesta": "Dormir bien, reducir el estrés, llevar una dieta equilibrada y evitar cambios bruscos en el ejercicio ayudan a regularlo 🌸.\nSi el ciclo sigue irregular por meses, podés consultar para descartar desequilibrios hormonales."
+  },
+  {
+    "pregunta": "¿Qué hago si me duele mucho la menstruación?",
+    "respuesta": "El dolor moderado es normal, pero el dolor fuerte puede indicar algo como endometriosis o dismenorrea 🌙.\nPodés usar calor, analgésicos comunes o descansar. Si es muy intenso, hablalo con un profesional 💕."
+  },
+  {
+    "pregunta": "¿Es normal tener acné antes de menstruar?",
+    "respuesta": "Sí 🌼. Los cambios hormonales antes del periodo pueden causar acné premenstrual.\nLa hidratación, el manejo del estrés y una rutina facial suave ayudan mucho."
+  },
+  {
+    "pregunta": "¿Por qué tengo antojos antes de menstruar?",
+    "respuesta": "Los cambios hormonales pueden hacer que el cuerpo busque más energía o placer inmediato 💕.\nEs normal tener antojos dulces o salados antes del periodo."
+  },
+  {
+    "pregunta": "¿El ejercicio ayuda para el dolor menstrual?",
+    "respuesta": "Sí 🌸. Actividades suaves como caminar, yoga o estiramientos ayudan a mejorar la circulación y reducir los cólicos."
+  },
+  {
+    "pregunta": "¿La copa menstrual es segura?",
+    "respuesta": "Sí 💗. La copa es segura, económica y ecológica.\nDebe lavarse bien y vaciarse cada 4 a 8 horas. Si tenés molestias, tal vez necesites otro tamaño."
+  },
+  {
+    "pregunta": "¿Qué es el flujo normal?",
+    "respuesta": "El flujo saludable puede ser transparente, blanco o ligeramente amarillento 🌼.\nNo debería arder, doler ni tener olor fuerte."
+  },
+  {
+    "pregunta": "¿Qué hago si tengo mucho dolor de ovarios?",
+    "respuesta": "Un leve dolor durante la ovulación o menstruación puede ser normal 🌙.\nSi el dolor es fuerte, persistente o aparece fuera del ciclo, conviene revisarlo con un profesional."
+  },
+  {
+    "pregunta": "¿Puedo nadar con menstruación?",
+    "respuesta": "Sí 🌊. Con tampón, copa menstrual o apósito interno podés nadar sin problema.\nEl agua no corta la menstruación, pero hace que el flujo sea menor."
+  },
+  {
+    "pregunta": "¿Cómo sé si estoy ovulando?",
+    "respuesta": "Podés notar flujo más elástico, leve dolor en un ovario, aumento de la libido o cambios de humor 🌼.\nLos tests de ovulación también pueden ayudarte."
+  },
+  {
+    "pregunta": "¿Puedo quedar embarazada justo después de menstruar?",
+    "respuesta": "Sí 🌿. No es lo más común, pero puede pasar si ovulás temprano y el esperma sobrevive varios días."
+  },
+  {
+    "pregunta": "¿Qué es el método de temperatura basal?",
+    "respuesta": "Es un método para identificar la ovulación midiendo tu temperatura todos los días al despertar 🌸.\nUn ligero aumento indica que ya ovulaste. Requiere constancia."
+  },
+  {
+    "pregunta": "¿Por qué me siento triste antes de menstruar?",
+    "respuesta": "Las hormonas afectan directamente al estado de ánimo 🌙.\nPodés sentir tristeza, irritabilidad o llanto fácil. Es normal. Si te afecta mucho, podés buscar acompañamiento emocional."
+  },
+  {
+    "pregunta": "¿Es normal tener sueño antes del periodo?",
+    "respuesta": "Sí 💤. La progesterona aumenta y genera más cansancio.\nDormir bien, hidratarte y evitar cafeína en exceso puede ayudar."
+  },
+  {
+    "pregunta": "¿Por qué tengo tanto hambre?",
+    "respuesta": "Tus hormonas están haciendo un esfuerzo grande, especialmente antes del periodo 💫.\nEl cuerpo pide más energía, por eso aumenta el apetito."
+  },
+  {
+    "pregunta": "¿Qué alimentos ayudan durante la menstruación?",
+    "respuesta": "Los ricos en hierro, magnesio y omega 3 son ideales 🌿:\nEspinaca, pescado, lentejas, banana, nueces y chocolate amargo."
+  },
+  {
+    "pregunta": "¿Qué hago si tengo sangrado entre periodos?",
+    "respuesta": "Puede deberse a estrés, métodos anticonceptivos o cambios hormonales 🌸.\nSi pasa seguido o es abundante, conviene consultarlo."
+  },
+  {
+    "pregunta": "¿Puedo quedar embarazada si estoy amamantando?",
+    "respuesta": "Sí 🌸. Aunque la lactancia puede retrasar la ovulación, no es un método anticonceptivo confiable."
+  },
+  {
+    "pregunta": "¿Por qué mis pechos duelen antes del periodo?",
+    "respuesta": "Por la subida de progesterona 🌼.\nGenera sensibilidad, hinchazón y molestia. Suele mejorar cuando llega la menstruación."
+  },
+  {
+    "pregunta": "¿Qué es una infección por cándida?",
+    "respuesta": "Es una infección por hongos que causa picazón, ardor y flujo blanco espeso 🌸.\nSe trata con medicación antifúngica. No te automediques."
+  },
+  {
+    "pregunta": "¿Cómo sé si mi flujo es normal?",
+    "respuesta": "El flujo normal no huele mal, no arde y cambia durante el ciclo 🌿.\nSi tiene olor fuerte, pica o cambia de color, conviene revisarlo."
+  },
+  {
+    "pregunta": "¿El preservativo se puede vencer?",
+    "respuesta": "Sí ⚠️. Todos los preservativos tienen fecha de vencimiento.\nUsarlo vencido aumenta el riesgo de rotura."
+  },
+  {
+    "pregunta": "¿Cómo sé si un preservativo está bien puesto?",
+    "respuesta": "Debe desenrollarse fácilmente, no debe quedar aire en la punta y tiene que ajustarse sin lastimar 🌸.\nSiempre apretá la punta antes de colocarlo."
+  },
+  {
+    "pregunta": "¿Es normal perder la libido en algunos días del ciclo?",
+    "respuesta": "Sí 💗. La libido puede subir en ovulación y bajar antes o durante la menstruación.\nEs parte natural de los cambios hormonales."
+  },
+  {
+    "pregunta": "¿Qué puedo hacer si tengo ansiedad por mi ciclo?",
+    "respuesta": "Respirar profundo, escribir lo que sentís o hablar con alguien de confianza ayuda mucho 🌿.\nTambién puedo acompañarte emocionalmente."
+  },
+  {
+    "pregunta": "¿La pastilla del día después puede retrasar mi periodo?",
+    "respuesta": "Sí 🌸. Puede adelantarlo o atrasarlo algunos días.\nEs un efecto normal debido a la carga hormonal."
+  },
+  {
+    "pregunta": "¿Cuánto dura la ovulación?",
+    "respuesta": "La ovulación dura unas pocas horas 🌼, pero tu ventana fértil puede extenderse hasta 5 días por la supervivencia del esperma."
+  },
+  {
+    "pregunta": "¿Qué es el síndrome de tensión premenstrual?",
+    "respuesta": "Es una combinación de síntomas físicos y emocionales antes de la menstruación 🌙.\nIncluye irritabilidad, cansancio, dolor y cambios de humor."
+  },
+  {
+    "pregunta": "¿La pastilla engorda?",
+    "respuesta": "Algunas personas pueden retener líquido con anticonceptivos hormonales, pero no genera aumento de grasa corporal 🌸."
+  },
+  {
+    "pregunta": "¿Cómo puedo cuidar mi salud íntima?",
+    "respuesta": "Lavado suave con agua, ropa interior de algodón, evitar duchas vaginales y cambiar seguido los productos menstruales 🌿.\nTu vulva se limpia sola ❤️."
+  },
+  {
+    "pregunta": "¿Es normal sentirme muy sensible antes del periodo?",
+    "respuesta": "Sí 💕. Las hormonas influyen directamente en tus emociones.\nEstá bien sentirte más emocionaI o vulnerable."
   }
 ]
