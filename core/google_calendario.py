@@ -5,6 +5,7 @@ import requests
 from datetime import datetime, date, timedelta
 from typing import Optional
 
+
 class GoogleCalendarClient:
     TOKEN_URL = "https://oauth2.googleapis.com/token"
     EVENT_URL = "https://www.googleapis.com/calendar/v3/calendars/primary/events"
@@ -60,15 +61,6 @@ class GoogleCalendarClient:
         return None
 
     def crear_evento(self, chat_id: str, fecha_inicio: datetime, titulo: str, descripcion: str = "", all_day: bool = False, color_id: Optional[str] = None):
-        """Crea un evento en el calendario del usuario.
-
-        Parámetros:
-        - chat_id: id del usuario (string)
-        - fecha_inicio: datetime o date (si all_day=True se usará la fecha)
-        - titulo, descripcion: texto
-        - all_day: si True crea un evento "todo el día" (usando 'date' en lugar de 'dateTime')
-        - color_id: opcional, id de color del calendario (string entre '1' y '11')
-        """
         # Obtener tokens directamente desde el token_storage
         tokens = self.token_storage.obtener(chat_id)
         if not tokens:
@@ -133,7 +125,6 @@ class GoogleCalendarClient:
             print(f"⚠️ Error al crear el evento: {response.status_code}")
             return False
 
-        # éxito: confirmar creación sin imprimir payload
         print("✅ Evento creado correctamente en Google Calendar.")
         return True
 
@@ -148,7 +139,7 @@ class GoogleCalendarClient:
 
         proximo_ciclo = fecha_ultimo_dt + timedelta(days=28)
 
-        # Evento del último ciclo (todo el día, color distintivo)
+        # Evento del último ciclo
         self.crear_evento(
             chat_id,
             fecha_ultimo_dt,
@@ -158,7 +149,7 @@ class GoogleCalendarClient:
             color_id="11"
         )
 
-        # Evento del próximo ciclo estimado (todo el día, color distinto)
+        # Evento del próximo ciclo estimado
         self.crear_evento(
             chat_id,
             proximo_ciclo,

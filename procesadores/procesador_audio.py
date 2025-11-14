@@ -18,6 +18,7 @@ class AnalizadorAudio:
         if not self.token:
             raise ValueError("Error: no se encontró el token de Telegram.")
         self.informacion = self.cargar_informacion()
+
     def cargar_informacion(self):
         try:
             with open("info_OvulAI.json", "r", encoding="utf-8") as f:
@@ -26,6 +27,7 @@ class AnalizadorAudio:
         except Exception as e:
             print(f"Error al cargar info_OvulAI.json: {e}")
             return {}
+        
     def obtener_respuesta_groq(self, user_message: str):
         try:
             system_prompt = f"""
@@ -85,7 +87,6 @@ class AnalizadorAudio:
             print(f"No se pudo obtener la respuesta: {str(e)}")
             return None
     
-
     def transcribir_voz_groq(self, message: tlb.types.Message) -> Optional[str]:
         try:
             if not self.bot:
@@ -95,8 +96,7 @@ class AnalizadorAudio:
             downloaded_file = self.bot.download_file(file_info.file_path)
             temp_file = "temp_voice.ogg"
 
-
-            #guardar el archivo de forma temporal
+            # Guarda el archivo de forma temporal
             with open(temp_file, "wb") as f:
                 f.write(downloaded_file)
             with open(temp_file, "rb") as file:
@@ -109,7 +109,6 @@ class AnalizadorAudio:
                     temperature = 1
                 )
             os.remove(temp_file)
-
 
             return trascription.text
         except Exception as e:
