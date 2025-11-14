@@ -4,6 +4,7 @@ import requests
 from urllib.parse import urlencode
 from core.configuracion import Configuracion
 
+
 class TokenStorage:
     """Storage simple en JSON; podés reemplazar por DB."""
     def __init__(self, path="google_tokens.json"):

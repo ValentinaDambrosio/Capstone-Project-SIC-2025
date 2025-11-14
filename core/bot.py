@@ -8,6 +8,7 @@ from ciclo.seguimiento_ciclo import CycleTracker
 from core.google_auth import GoogleAuthService
 from core.router import Router
 
+
 class TelegramBotHandler:
     def __init__(self):
         self.token = Configuracion().token_telegram

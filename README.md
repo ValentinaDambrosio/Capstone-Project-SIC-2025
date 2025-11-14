@@ -1,3 +1,4 @@
+![Logo](./assets/logo_OvulAI.png)
 ### <h1> 🌸 OvulAI — Tu bot de confianza 💬✨
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Telegram Bot API](https://img.shields.io/badge/Telegram_Bot-API-blue?logo=telegram)
@@ -44,28 +45,38 @@ OvulAI busca **romper el tabú sobre la menstruación** y promover el **autocono
 <summary>🌸 Ver menú principal</summary>
 
 
-### 🩷 Quiero hablar de cómo me siento
+### 💗 Quiero hablar de cómo me siento
 Detecta emociones con *Transformers*, responde con empatía y, si hay malestar, muestra un mapa con especialistas cercanos.
-
 
 ### 🌙 Registrar mi ciclo
 Ingresá la fecha de tu última menstruación (`DD/MM/AAAA`).  
 El bot valida errores (formato, fecha futura o antigua) y responde con mensajes personalizados.
-
 
 ### 💫 Mi cuerpo y mis síntomas
 Muestra:
 - Fase actual del ciclo  
 - Próxima menstruación estimada  
 - Último registro  
-Y ofrece consejos adaptados a la fase (folicular, ovulatoria, lútea o menstrual).
+- Y ofrece consejos adaptados a la fase (folicular, ovulatoria, lútea o menstrual) en base a preguntas que le envies.
 
+### 📅 Conectar mi calendario
+Inicia la conexión segura con tu cuenta de Google Calendar.
+- **Autorización**: Recibirás un link único para dar permisos a OvulAI.
+- **Sincronización**: Una vez conectada y registrado tu ciclo, el bot creará dos eventos en tu calendario:
+  - 🗓️ La fecha de tu **última menstruación** registrada.
+  - 🔔 La fecha de tu **próxima menstruación estimada** (¡con un recordatorio 3 días antes!).
 
 ### 🎁 Sorprendeme
 Devuelve una de tres opciones aleatorias:
 - Horóscopo diario (vía API) ♈  
 - GIFs de animales tiernos 🐶  
 - Frases motivadoras ✨
+
+### ℹ️ Información OvulAI
+Muestra un resumen completo sobre el bot, su propósito y cómo usarlo.
+- **Bienvenida**: Presenta a *OvulAI* (asistente de emociones, autocuidado y ciclo) y un disclaimer de salud.
+- **Guía de botones**: Explica en detalle la función de cada una de las opciones del menú.
+- **Tips de uso**: Da consejos sobre la navegación, el botón "Volver al menú" y cómo el bot mane.ja el texto libre, audios o imágenes.
 </details>
 
 
@@ -87,7 +98,7 @@ Devuelve una de tres opciones aleatorias:
 - 🔒 **Privacidad por diseño:** no almacena información sensible por defecto.  
 
 
-## 🪄 Tecnologías utilizadas
+## ✨ Tecnologías utilizadas
 
 
 | Categoría | Tecnologías |
@@ -100,19 +111,26 @@ Devuelve una de tres opciones aleatorias:
 | ⚙️ Backend | Python 3.10+, POO, modular design |
 
 
+## 🚀 Variables de Entorno (API Keys)
 
+Para que OvulAI funcione correctamente, es fundamental configurar las siguientes variables de entorno. Debés crear un archivo llamado `.env` en la raíz del proyecto y añadir las siguientes claves:
 
-
-
-
+```bash
+TELEGRAM_TOKEN=<tu-token-de-telegram>
+GROQ_TOKEN=<tu-api-key-de-groq>
+GROQ_URL=<tu-url-de-api-groq>
+GOOGLE_CLIENT_ID=<tu-client-id-de-google>
+GOOGLE_CLIENT_SECRET=<tu-client-secret-de-google>
+GOOGLE_REDIRECT_URI=<tu-redirect-uri-de-google>
+GOOGLE_SCOPES=<tus-scopes-de-google>
+```
 
 ## 🛠️ Instalación y puesta en marcha
 
-
 ```bash
 # 1️⃣ Clonar el repositorio
-git clone git@github.com:tu-org/ovulai-bot.git
-cd ovulai-bot
+git clone https://github.com/ValentinaDambrosio/Capstone-Project-SIC-2025.git
+cd Capstone-Project-SIC-2025
 
 
 # 2️⃣ Crear y activar entorno virtual
@@ -125,7 +143,7 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 
 
-# 4️⃣ Crear archivo .env
+# 4️⃣ Crear archivo .env en la raíz del proyecto
 # Incluye tus claves de API y token del bot
 
 

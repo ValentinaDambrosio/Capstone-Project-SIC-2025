@@ -2,6 +2,7 @@ import json
 import os
 from datetime import datetime, timedelta
 
+
 class CycleTracker:
     def __init__(self, archivo_ciclos: str = "ciclos.json"):
         base_dir = os.path.dirname(__file__)

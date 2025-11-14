@@ -85,19 +85,27 @@
     "options": [
       {
         "id": 1,
-        "label": "Registrar mi ciclo 📅"
+        "label": "Quiero hablar de cómo me siento 💬"
       },
       {
         "id": 2,
-        "label": "Mi cuerpo y mis síntomas"
+        "label": "Mi cuerpo y mis síntomas 🔍"
       },
       {
         "id": 3,
-        "label": "Quiero hablar de cómo me siento"
+        "label": "Registrar mi ciclo 📅"
       },
       {
         "id": 4,
+        "label": "Conectar mi calendario 📆"
+      },
+      {
+        "id": 5,
         "label": "Sorpréndeme 💫"
+      },
+      {
+        "id": 6,
+        "label": "Información OvulAI ℹ️"
       }
     ]
   },

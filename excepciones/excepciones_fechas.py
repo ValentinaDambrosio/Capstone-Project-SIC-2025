@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+
 class ExceptionFechas(Exception):
     
     def __init__(self, mensaje="La fecha no puede ser futura."):
